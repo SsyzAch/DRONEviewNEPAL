@@ -32,6 +32,66 @@ async function runScenarioGenerator() {
     process.exit(1);
   }
 
+  // Edge check A: Initialization should fail if rule references missing citation.
+  const invalidApi = new ApiLayer();
+  const invalidRules = JSON.parse(JSON.stringify(rules));
+  invalidRules[0].citationIds = ["cit-does-not-exist"];
+  const invalidInit = invalidApi.initialize(drones, invalidRules, authorities, permitNodes, geoLayers, citations);
+  if (invalidInit.success) {
+    console.error("[FAIL] Integrity check did not catch missing citation reference.");
+    process.exit(1);
+  }
+
+  // Edge check B: Temporal recurring window behavior.
+  const temporalApi = new ApiLayer();
+  const temporalRules = JSON.parse(JSON.stringify(rules));
+  temporalRules.push({
+    id: "rule-nep-temporal-window-test-001",
+    name: "Nightly research window warning",
+    priority: 20,
+    conditions: [{ field: "pilot.purpose", operator: "==", value: "Research" }],
+    result: { status: "Warning", reason: "Temporal test rule active.", riskSurcharge: {} },
+    citationIds: ["cit-nep-caan-uasr-2021-sec101-7-a-1"],
+    temporal: {
+      start: "2026-06-01T22:00:00Z",
+      end: "2026-07-01T04:00:00Z",
+      timezone: "UTC",
+      recurring: "daily",
+    },
+    metadata: {
+      reviewStatus: "Published",
+      effectiveDate: "2026-06-01",
+      expiryDate: null,
+      revision: 1,
+      supersedesId: null,
+    },
+  });
+  const temporalInit = temporalApi.initialize(drones, temporalRules, authorities, permitNodes, geoLayers, citations);
+  if (!temporalInit.success) {
+    console.error("[FAIL] Temporal test initialization failed.");
+    process.exit(1);
+  }
+
+  const temporalActive = await temporalApi.validateFlight({
+    flight: { latitude: 28.0, longitude: 84.0, altitudeAgl: 30, dateTime: "2026-06-30T23:00:00Z" },
+    drone: { manufacturer: "DJI", model: "Mini 4 Pro" },
+    pilot: { nationality: "Nepali", purpose: "Research" },
+  });
+  if (!temporalActive.results.matchedRules.some((r) => r.id === "rule-nep-temporal-window-test-001")) {
+    console.error("[FAIL] Expected recurring temporal rule to be active.");
+    process.exit(1);
+  }
+
+  const temporalInactive = await temporalApi.validateFlight({
+    flight: { latitude: 28.0, longitude: 84.0, altitudeAgl: 30, dateTime: "2026-06-30T12:00:00Z" },
+    drone: { manufacturer: "DJI", model: "Mini 4 Pro" },
+    pilot: { nationality: "Nepali", purpose: "Research" },
+  });
+  if (temporalInactive.results.matchedRules.some((r) => r.id === "rule-nep-temporal-window-test-001")) {
+    console.error("[FAIL] Expected recurring temporal rule to be inactive outside window.");
+    process.exit(1);
+  }
+
   let passes = 0;
   let failures = 0;
 
@@ -105,6 +165,17 @@ async function runScenarioGenerator() {
       if (isForeign && !res.requiredPermits.includes("Ministry of Home Affairs Security Clearance Letter")) {
         scenarioPassed = false;
         console.error(`  [FAIL] Scenario ${i}: Foreign pilot has no MoHA clearance requirement.`);
+      }
+
+      // Assertion E: Unknown drone model should still evaluate with fallback weights
+      const unknownDroneEval = await api.validateFlight({
+        flight: input.flight,
+        drone: { manufacturer: "UnknownCorp", model: `Model-${i}`, takeoffWeightGrams: 2400 },
+        pilot: input.pilot,
+      });
+      if (!unknownDroneEval.results.requiredPermits.includes("CAAN Drone Registration Certificate (Unique Identification Number)")) {
+        scenarioPassed = false;
+        console.error(`  [FAIL] Scenario ${i}: Unknown model did not evaluate permit graph correctly.`);
       }
 
       if (scenarioPassed) {

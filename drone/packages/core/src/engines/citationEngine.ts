@@ -24,7 +24,18 @@ export class CitationEngine {
 
     const uniqueCitations = new Map<
       string,
-      { id: string; authorityName: string; legalBasis: string; officialCircular: string; lastVerified: string }
+      {
+        id: string;
+        documentId: string;
+        authorityName: string;
+        legalBasis: string;
+        officialCircular: string;
+        section: string;
+        page: number;
+        quoteStart: string;
+        quoteEnd: string;
+        ocrConfidence: number;
+      }
     >();
 
     for (const matchedRule of context.results.matchedRules) {
@@ -38,14 +49,18 @@ export class CitationEngine {
         const authority = authMap.get(citation.authorityId);
         const authorityName = authority ? authority.name : citation.authorityId;
 
-        const key = `${citation.authorityId}::${citation.legalBasis}`;
-        if (!uniqueCitations.has(key)) {
-          uniqueCitations.set(key, {
-            id: key,
+        if (!uniqueCitations.has(citation.id)) {
+          uniqueCitations.set(citation.id, {
+            id: citation.id,
+            documentId: citation.documentId,
             authorityName,
             legalBasis: citation.legalBasis,
             officialCircular: citation.officialCircular,
-            lastVerified: new Date().toISOString().split("T")[0],
+            section: citation.section,
+            page: citation.page,
+            quoteStart: citation.quoteStart,
+            quoteEnd: citation.quoteEnd,
+            ocrConfidence: citation.ocrConfidence,
           });
         }
       }

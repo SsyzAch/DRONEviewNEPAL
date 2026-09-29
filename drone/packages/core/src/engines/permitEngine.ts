@@ -18,8 +18,14 @@ export class PermitEngine {
       nodeMap.set(node.id, node);
     }
 
-    // Find the starting root node (convention: first node in list, or node not referenced as a next node)
-    let currentNode: PermitNode | undefined = nodes[0];
+    const referencedNodeIds = new Set<string>();
+    for (const node of nodes) {
+      if (node.nextTrueNodeId) referencedNodeIds.add(node.nextTrueNodeId);
+      if (node.nextFalseNodeId) referencedNodeIds.add(node.nextFalseNodeId);
+    }
+
+    // Prefer graph root inferred from references, then fall back to first node.
+    let currentNode: PermitNode | undefined = nodes.find((n) => !referencedNodeIds.has(n.id)) || nodes[0];
 
     const collectedPermits = new Set<string>();
     const evaluatedNodes = new Set<string>();

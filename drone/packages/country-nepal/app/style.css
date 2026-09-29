@@ -93,6 +93,7 @@
 /* Dynamic Classes used by JS */
 .status-allowed { color: #16a34a; background-color: #dcfce7; border-color: #bbf7d0; }
 .status-warning { color: #d97706; background-color: #fef3c7; border-color: #fde68a; }
+.status-permit-required { color: #7c3aed; background-color: #ede9fe; border-color: #ddd6fe; }
 .status-restricted { color: #ea580c; background-color: #ffedd5; border-color: #fed7aa; }
 .status-prohibited { color: #dc2626; background-color: #fee2e2; border-color: #fecaca; }
 

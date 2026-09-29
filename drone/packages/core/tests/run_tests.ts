@@ -50,14 +50,61 @@ const scenarios: Array<{
         "purpose": "Commercial"
       }
     },
-    "expectedStatus": "Restricted",
+    "expectedStatus": "Permit Required",
     "expectedPermitsContains": [
       "CAAN Drone Registration Certificate (Unique Identification Number)",
       "Ministry of Home Affairs Security Clearance Letter",
       "Department of Tourism Recommendation Approval",
-      "CAAN Flight Operations Permit (FPN Number)",
-      "Department of National Parks and Wildlife Conservation (DNPWC) Flight Approval"
+      "CAAN Flight Operations Permit (FPN Number)"
     ]
+  },
+  {
+    "name": "Scenario 4: Foreign Recreational Flight in Open Area Requires Permit",
+    "input": {
+      "flight": {
+        "latitude": 28.0,
+        "longitude": 84.0,
+        "altitudeAgl": 40,
+        "dateTime": "2026-06-30T05:00:00Z"
+      },
+      "drone": {
+        "manufacturer": "DJI",
+        "model": "Mini 4 Pro"
+      },
+      "pilot": {
+        "nationality": "Foreign",
+        "purpose": "Recreational"
+      }
+    },
+    "expectedStatus": "Permit Required",
+    "expectedPermitsContains": [
+      "CAAN Drone Registration Certificate (Unique Identification Number)",
+      "Ministry of Home Affairs Security Clearance Letter",
+      "Department of Tourism Recommendation Approval"
+    ],
+    "expectedCitationsContains": ["MoHA UAV Working Procedure 2075 (Section 4.3)"]
+  },
+  {
+    "name": "Scenario 5: Weight Over 25kg Is Prohibited",
+    "input": {
+      "flight": {
+        "latitude": 28.0,
+        "longitude": 84.0,
+        "altitudeAgl": 40,
+        "dateTime": "2026-06-30T05:00:00Z"
+      },
+      "drone": {
+        "manufacturer": "DJI",
+        "model": "Mini 4 Pro",
+        "takeoffWeightGrams": 26000
+      },
+      "pilot": {
+        "nationality": "Nepali",
+        "purpose": "Recreational"
+      }
+    },
+    "expectedStatus": "Prohibited",
+    "expectedCitationsContains": ["UASR Reg. 101.37"]
   },
   {
     "name": "Scenario 3: Standard Recreational Open Rural Area Flight (Safe Profile)",
@@ -99,6 +146,12 @@ async function runTests() {
   const authorities = JSON.parse(fs.readFileSync(path.join(baseDataPath, "metadata/1.0.0/authorities.json"), "utf8"));
   const permitNodes = JSON.parse(fs.readFileSync(path.join(baseDataPath, "permits/1.0.0/workflow_graph.json"), "utf8"));
   const citations = JSON.parse(fs.readFileSync(path.join(baseDataPath, "citations/1.0.0/citations.json"), "utf8"));
+  const manifests = {
+    drones: JSON.parse(fs.readFileSync(path.join(baseDataPath, "drones/1.0.0/manifest.json"), "utf8")),
+    rules: JSON.parse(fs.readFileSync(path.join(baseDataPath, "rules/1.0.0/manifest.json"), "utf8")),
+    metadata: JSON.parse(fs.readFileSync(path.join(baseDataPath, "metadata/1.0.0/manifest.json"), "utf8")),
+    geo: JSON.parse(fs.readFileSync(path.join(baseDataPath, "geo/1.0.0/manifest.json"), "utf8")),
+  };
 
   const geoPath = path.join(baseDataPath, "geo/1.0.0");
   const geoLayers = {
@@ -119,6 +172,13 @@ async function runTests() {
   }
   console.log("API Layer Initialized Successfully.\n");
 
+  // Dataset version alignment check
+  const datasetVersions = new Set(Object.values(manifests).map((manifest: any) => manifest.version));
+  if (datasetVersions.size !== 1) {
+    console.error("Dataset manifest versions are not aligned.");
+    process.exit(1);
+  }
+
   let passes = 0;
   let failures = 0;
 
@@ -127,6 +187,14 @@ async function runTests() {
     try {
       const context = await api.validateFlight(scenario.input);
       const results = context.results;
+      const outputShapeChecks = [
+        typeof results.status === "string",
+        Array.isArray(results.requiredPermits),
+        Array.isArray(results.citations),
+        Array.isArray(results.explanations),
+        Array.isArray(results.structuredExplanations),
+        typeof results.risk.overall === "number",
+      ];
 
       console.log(`  - Status: Resolved to ${results.status} (Expected: ${scenario.expectedStatus})`);
       
@@ -151,6 +219,11 @@ async function runTests() {
           if (!legalBases.includes(citation)) {
             testPassed = false;
             console.error(`  [FAIL] Missing expected citation: "${citation}"`);
+          }
+
+          if (outputShapeChecks.some((passed) => !passed)) {
+            testPassed = false;
+            console.error("  [FAIL] API output shape does not match app consumption contract.");
           }
         }
       }

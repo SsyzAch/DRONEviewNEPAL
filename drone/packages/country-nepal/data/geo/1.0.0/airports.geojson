@@ -1,0 +1,249 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "layer": "airports",
+    "version": "1.0.0"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-1",
+        "name": "Tribhuvan International Airport (TIA)",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3591,
+          27.6966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-2",
+        "name": "Pokhara International Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.9826,
+          28.208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-3",
+        "name": "Gautam Buddha International Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.4194,
+          27.5066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-4",
+        "name": "Tenzing-Hillary Airport (Lukla)",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.7294,
+          27.6869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-5",
+        "name": "Nepalgunj Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.6033,
+          28.1006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-6",
+        "name": "Biratnagar Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.2661,
+          26.4839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-7",
+        "name": "Simara Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.9786,
+          27.1664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-8",
+        "name": "Bharatpur Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.4283,
+          27.6775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-9",
+        "name": "Janakpur Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.9228,
+          26.7092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-10",
+        "name": "Dhangadhi Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5753,
+          28.7533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-11",
+        "name": "Chandragadhi Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.0494,
+          26.5714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-12",
+        "name": "Surkhet Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.6361,
+          28.5861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-13",
+        "name": "Tumlingtar Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.1931,
+          27.3142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-14",
+        "name": "Jomsom Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.7225,
+          28.7817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "airports-15",
+        "name": "Rara Airport",
+        "category": "airports",
+        "bufferMeters": 5000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.0492,
+          29.5292
+        ]
+      }
+    }
+  ]
+}

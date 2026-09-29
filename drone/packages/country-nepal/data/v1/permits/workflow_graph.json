@@ -1,0 +1,111 @@
+[
+  {
+    "id": "node-nep-registration-001",
+    "description": "Baseline UAV registration requirement. All civilian drones operated in Nepal must carry a valid CAAN registration certificate.",
+    "conditions": [],
+    "nextTrueNodeId": "node-nep-nationality-001",
+    "nextFalseNodeId": null,
+    "requiredPermits": [
+      "CAAN Drone Registration Certificate (Unique Identification Number)"
+    ],
+    "governingAuthorityIds": [
+      "auth-nep-caan-001"
+    ]
+  },
+  {
+    "id": "node-nep-nationality-001",
+    "description": "Check operator nationality. Foreign pilots require MoHA screening and Department of Tourism approval.",
+    "conditions": [
+      {
+        "field": "pilot.nationality",
+        "operator": "==",
+        "value": "Foreign"
+      }
+    ],
+    "nextTrueNodeId": "node-nep-purpose-001",
+    "nextFalseNodeId": "node-nep-purpose-001",
+    "requiredPermits": [
+      "Ministry of Home Affairs Security Clearance Letter",
+      "Department of Tourism Recommendation Approval"
+    ],
+    "governingAuthorityIds": [
+      "auth-nep-moha-001"
+    ]
+  },
+  {
+    "id": "node-nep-purpose-001",
+    "description": "Check operation purpose. Commercial mapping/filming requires a CAAN Flight Operations Permit.",
+    "conditions": [
+      {
+        "field": "pilot.purpose",
+        "operator": "==",
+        "value": "Commercial"
+      }
+    ],
+    "nextTrueNodeId": "node-nep-park-001",
+    "nextFalseNodeId": "node-nep-altitude-dao-001",
+    "requiredPermits": [
+      "CAAN Flight Operations Permit (FPN Number)"
+    ],
+    "governingAuthorityIds": [
+      "auth-nep-caan-001"
+    ]
+  },
+  {
+    "id": "node-nep-altitude-dao-001",
+    "description": "Check if recreational flight is higher-altitude or heavier, which routing procedures direct to DAO approval.",
+    "conditions": [
+      {
+        "field": "altitudeAgl",
+        "operator": ">",
+        "value": 60
+      }
+    ],
+    "nextTrueNodeId": "node-nep-park-001",
+    "nextFalseNodeId": "node-nep-park-001",
+    "requiredPermits": [
+      "Local District Administration Office (DAO) Flight Clearance"
+    ],
+    "governingAuthorityIds": [
+      "auth-nep-dao-001"
+    ]
+  },
+  {
+    "id": "node-nep-park-001",
+    "description": "Check if flight occurs inside a national park boundary.",
+    "conditions": [
+      {
+        "field": "insideNationalPark",
+        "operator": "==",
+        "value": true
+      }
+    ],
+    "nextTrueNodeId": "node-nep-heritage-001",
+    "nextFalseNodeId": "node-nep-heritage-001",
+    "requiredPermits": [
+      "Department of National Parks and Wildlife Conservation (DNPWC) Flight Approval"
+    ],
+    "governingAuthorityIds": [
+      "auth-nep-dnpwc-001"
+    ]
+  },
+  {
+    "id": "node-nep-heritage-001",
+    "description": "Check if flight occurs over a UNESCO World Heritage Site.",
+    "conditions": [
+      {
+        "field": "insideHeritageSite",
+        "operator": "==",
+        "value": true
+      }
+    ],
+    "nextTrueNodeId": null,
+    "nextFalseNodeId": null,
+    "requiredPermits": [
+      "Department of Archaeology (DoA) Ancient Monument Photography Clearance"
+    ],
+    "governingAuthorityIds": [
+      "auth-nep-doa-001"
+    ]
+  }
+]

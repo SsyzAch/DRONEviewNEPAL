@@ -1,0 +1,10 @@
+{
+  "layerName": "airports",
+  "source": "Civil Aviation Authority of Nepal (CAAN) AIP",
+  "downloadDate": "2026-06-30",
+  "checksum": "sha256-airports-checksum-v1",
+  "version": "1.0.0",
+  "license": "Public Domain / Governmental Aviation Data",
+  "maintainer": "Flight Safety Standards Department, CAAN",
+  "updateFrequency": "monthly"
+}

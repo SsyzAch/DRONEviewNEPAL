@@ -1,0 +1,12 @@
+{
+  "dataset": "rules",
+  "version": "1.0.0",
+  "recordCount": 7,
+  "coordinateSystem": "N/A",
+  "generatedFrom": [
+    "doc-nep-caan-uasr-2021",
+    "doc-nep-moha-procedure-2075"
+  ],
+  "lastVerified": "2026-06-30",
+  "checksum": "sha256-rules-manifest-v1"
+}

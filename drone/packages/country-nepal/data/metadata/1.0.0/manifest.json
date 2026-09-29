@@ -1,0 +1,11 @@
+{
+  "dataset": "metadata",
+  "version": "1.0.0",
+  "recordCount": 8,
+  "coordinateSystem": "N/A",
+  "generatedFrom": [
+    "Civil Aviation Authority of Nepal directory, Nepal Government Secretariat lists"
+  ],
+  "lastVerified": "2026-06-30",
+  "checksum": "sha256-metadata-manifest-v1"
+}

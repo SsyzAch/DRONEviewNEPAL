@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DroneModel",
+  "type": "object",
+  "required": [
+    "id",
+    "manufacturer",
+    "model",
+    "weightGrams",
+    "maxAltitudeMeters",
+    "hasCamera",
+    "takeoffWeightGrams",
+    "category",
+    "registrationRequired",
+    "insuranceRequired",
+    "licenseRequired",
+    "commercialAllowed",
+    "remoteIdSupport",
+    "batteryType",
+    "firmwareVersion"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "manufacturer": { "type": "string" },
+    "model": { "type": "string" },
+    "weightGrams": { "type": "integer" },
+    "maxAltitudeMeters": { "type": "integer" },
+    "hasCamera": { "type": "boolean" },
+    "takeoffWeightGrams": { "type": "integer" },
+    "category": { "type": "string", "enum": ["A", "B", "C", "D"] },
+    "registrationRequired": { "type": "boolean" },
+    "insuranceRequired": { "type": "boolean" },
+    "licenseRequired": { "type": "boolean" },
+    "commercialAllowed": { "type": "boolean" },
+    "remoteIdSupport": { "type": "boolean" },
+    "batteryType": { "type": "string" },
+    "firmwareVersion": { "type": "string" }
+  }
+}

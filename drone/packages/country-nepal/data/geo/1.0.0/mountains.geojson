@@ -1,0 +1,55 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [86.9250, 27.9881]
+      },
+      "properties": {
+        "id": "feat-nep-everest-001",
+        "name": "Mount Everest (Sagarmatha)",
+        "category": "mountains",
+        "authorityId": "auth-nep-caan-001",
+        "sourceDocument": "Official Survey of Nepal",
+        "effectiveDate": "1954-01-01",
+        "expires": null,
+        "restrictionType": "Advisory",
+        "bufferMeters": 0,
+        "priority": 10,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 100,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [83.8203, 28.5961]
+      },
+      "properties": {
+        "id": "feat-nep-annapurna-peak-001",
+        "name": "Annapurna I Peak",
+        "category": "mountains",
+        "authorityId": "auth-nep-caan-001",
+        "sourceDocument": "Official Survey of Nepal",
+        "effectiveDate": "1954-01-01",
+        "expires": null,
+        "restrictionType": "Advisory",
+        "bufferMeters": 0,
+        "priority": 10,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 100,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    }
+  ]
+}

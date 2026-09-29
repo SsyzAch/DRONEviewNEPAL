@@ -1,0 +1,10 @@
+{
+  "layerName": "national_parks",
+  "source": "Department of National Parks and Wildlife Conservation (DNPWC) GIS boundary maps",
+  "downloadDate": "2026-06-30",
+  "checksum": "sha256-parks-checksum-v1",
+  "version": "1.0.0",
+  "license": "Government Open Data / Protected Planet WDPA",
+  "maintainer": "DNPWC Office, Kathmandu",
+  "updateFrequency": "quarterly"
+}

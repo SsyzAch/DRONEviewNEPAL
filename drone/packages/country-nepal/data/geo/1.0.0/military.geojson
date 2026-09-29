@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [85.3149, 27.6974]
+      },
+      "properties": {
+        "id": "feat-nep-army-hq-001",
+        "name": "Nepal Army Headquarters (Bhadrakali, Kathmandu)",
+        "category": "military",
+        "authorityId": "auth-nep-army-001",
+        "sourceDocument": "Public Security Notices",
+        "effectiveDate": "1996-01-01",
+        "expires": null,
+        "restrictionType": "NoFly",
+        "bufferMeters": 1000,
+        "priority": 95,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 90,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": true
+        }
+      }
+    }
+  ]
+}

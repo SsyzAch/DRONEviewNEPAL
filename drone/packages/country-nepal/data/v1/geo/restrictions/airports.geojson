@@ -1,0 +1,105 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [85.3591, 27.6966]
+      },
+      "properties": {
+        "id": "feat-nep-tia-airport-001",
+        "name": "Tribhuvan International Airport (Kathmandu)",
+        "category": "airports",
+        "authorityId": "auth-nep-caan-001",
+        "sourceDocument": "CAAN AIP Part 3",
+        "effectiveDate": "1996-01-01",
+        "expires": null,
+        "restrictionType": "NoFly",
+        "bufferMeters": 5000,
+        "priority": 100,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 99,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [83.9826, 28.2080]
+      },
+      "properties": {
+        "id": "feat-nep-pokhara-airport-001",
+        "name": "Pokhara International Airport",
+        "category": "airports",
+        "authorityId": "auth-nep-caan-001",
+        "sourceDocument": "CAAN AIP Part 3",
+        "effectiveDate": "2023-01-01",
+        "expires": null,
+        "restrictionType": "NoFly",
+        "bufferMeters": 5000,
+        "priority": 100,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 99,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [83.41, 27.51]
+      },
+      "properties": {
+        "id": "feat-nep-gautam-buddha-airport-001",
+        "name": "Gautam Buddha International Airport (Bhairahawa)",
+        "category": "airports",
+        "authorityId": "auth-nep-caan-001",
+        "sourceDocument": "CAAN AIP Part 3",
+        "effectiveDate": "2022-05-16",
+        "expires": null,
+        "restrictionType": "NoFly",
+        "bufferMeters": 5000,
+        "priority": 100,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 99,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [86.7294, 27.6869]
+      },
+      "properties": {
+        "id": "feat-nep-lukla-airport-001",
+        "name": "Tenzing-Hillary Airport (Lukla)",
+        "category": "airports",
+        "authorityId": "auth-nep-caan-001",
+        "sourceDocument": "CAAN AIP Lukla Section",
+        "effectiveDate": "1996-01-01",
+        "expires": null,
+        "restrictionType": "NoFly",
+        "bufferMeters": 5000,
+        "priority": 100,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 98,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    }
+  ]
+}

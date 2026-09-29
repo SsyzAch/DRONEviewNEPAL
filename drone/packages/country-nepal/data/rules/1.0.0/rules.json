@@ -1,0 +1,184 @@
+[
+  {
+    "id": "rule-nep-airport-buffer-001",
+    "name": "Airport Boundary Safety Restriction",
+    "priority": 100,
+    "conditions": [
+      {
+        "field": "distanceToAirport",
+        "operator": "<",
+        "value": 5000
+      }
+    ],
+    "result": {
+      "status": "Prohibited",
+      "reason": "Flight is within the 5 km aerodrome buffer zone. Operations near active movement areas are prohibited for civil safety."
+    },
+    "citationIds": [
+      "cit-nep-caan-uasr-2021-sec101-7-b-5"
+    ],
+    "metadata": {
+      "reviewStatus": "Published",
+      "effectiveDate": "2021-06-30",
+      "expiryDate": null,
+      "revision": 1,
+      "supersedesId": null
+    }
+  },
+  {
+    "id": "rule-nep-altitude-limit-001",
+    "name": "Maximum Flight Altitude Limitation",
+    "priority": 90,
+    "conditions": [
+      {
+        "field": "altitudeAgl",
+        "operator": ">",
+        "value": 100
+      }
+    ],
+    "result": {
+      "status": "Restricted",
+      "reason": "Flight altitude exceeds the 100 meters (328 ft) AGL ceiling. Operations above this limit require segregated airspace or special NOTAM clearance."
+    },
+    "citationIds": [
+      "cit-nep-caan-uasr-2021-sec101-7-a-1"
+    ],
+    "metadata": {
+      "reviewStatus": "Published",
+      "effectiveDate": "2021-06-30",
+      "expiryDate": null,
+      "revision": 1,
+      "supersedesId": null
+    }
+  },
+  {
+    "id": "rule-nep-national-park-001",
+    "name": "Protected Wildlife and Conservation Area Restriction",
+    "priority": 85,
+    "conditions": [
+      {
+        "field": "insideNationalPark",
+        "operator": "==",
+        "value": true
+      }
+    ],
+    "result": {
+      "status": "Restricted",
+      "reason": "Flight coordinate is within a national park or wildlife reserve. Requires prior permit clearance from the DNPWC to protect local ecology."
+    },
+    "citationIds": [
+      "cit-nep-dnpwc-act-sec22"
+    ],
+    "metadata": {
+      "reviewStatus": "Published",
+      "effectiveDate": "2018-09-01",
+      "expiryDate": null,
+      "revision": 1,
+      "supersedesId": null
+    }
+  },
+  {
+    "id": "rule-nep-heritage-site-001",
+    "name": "UNESCO Heritage & Archaeological Monuments Protection",
+    "priority": 80,
+    "conditions": [
+      {
+        "field": "insideHeritageSite",
+        "operator": "==",
+        "value": true
+      }
+    ],
+    "result": {
+      "status": "Restricted",
+      "reason": "Flight coordinate is inside a UNESCO World Heritage site or protected archaeological area. Requires Department of Archaeology filming clearance."
+    },
+    "citationIds": [
+      "cit-nep-doa-act-sec12"
+    ],
+    "metadata": {
+      "reviewStatus": "Published",
+      "effectiveDate": "2015-05-15",
+      "expiryDate": null,
+      "revision": 1,
+      "supersedesId": null
+    }
+  },
+  {
+    "id": "rule-nep-foreign-pilot-001",
+    "name": "Foreign National Operator Screening",
+    "priority": 70,
+    "conditions": [
+      {
+        "field": "pilot.nationality",
+        "operator": "==",
+        "value": "Foreign"
+      }
+    ],
+    "result": {
+      "status": "Permit Required",
+      "reason": "Foreign national pilots are subject to mandatory security clearance and must operate under a local agency sponsor."
+    },
+    "citationIds": [
+      "cit-nep-moha-proc-sec4-3"
+    ],
+    "metadata": {
+      "reviewStatus": "Published",
+      "effectiveDate": "2019-01-01",
+      "expiryDate": null,
+      "revision": 1,
+      "supersedesId": null
+    }
+  },
+  {
+    "id": "rule-nep-commercial-purpose-001",
+    "name": "Commercial and Aerial Mapping Operations",
+    "priority": 65,
+    "conditions": [
+      {
+        "field": "pilot.purpose",
+        "operator": "==",
+        "value": "Commercial"
+      }
+    ],
+    "result": {
+      "status": "Permit Required",
+      "reason": "Commercial flight purposes (e.g. mapping, filming, inspection) require technical approvals and validation of third-party insurance."
+    },
+    "citationIds": [
+      "cit-nep-caan-uasr-2021-sec101-5"
+    ],
+    "metadata": {
+      "reviewStatus": "Published",
+      "effectiveDate": "2021-06-30",
+      "expiryDate": null,
+      "revision": 1,
+      "supersedesId": null
+    }
+  },
+  {
+    "id": "rule-nep-gross-weight-limit-001",
+    "name": "Maximum Takeoff Weight Part 101 Envelope Cap",
+    "priority": 110,
+    "conditions": [
+      {
+        "field": "drone.weightGrams",
+        "operator": ">",
+        "value": 25000
+      }
+    ],
+    "result": {
+      "status": "Prohibited",
+      "reason": "Drone weight exceeds 25 kg. Operations of this size fall outside standard civilian open frameworks and are generally prohibited for private safety."
+    },
+    "citationIds": [
+      "cit-nep-caan-uasr-2021-sec101-37"
+    ],
+    "metadata": {
+      "reviewStatus": "Published",
+      "effectiveDate": "2021-06-30",
+      "expiryDate": null,
+      "revision": 1,
+      "supersedesId": null
+    }
+  }
+]

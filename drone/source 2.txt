@@ -1,0 +1,319 @@
+# Nepal Drone Law & Regulatory Research: Comprehensive Knowledge Base
+
+**Prepared as a foundation for an interactive drone flight-planning application**
+**Research date: June 30, 2026 | Sources: CAAN, Sagarmatha National Park, government-hosted PDFs, gazetted Acts, and corroborating secondary sources (see Bibliography, §15)**
+
+---
+
+## How to read this document
+
+This is Phase 1 of what is realistically a multi-phase research program. It is built from roughly 20 targeted searches and direct fetches against CAAN's own published rulebook, the Sagarmatha National Park office site, Nepal's Privacy Act text, and a wide cross-section of legal and tourism-industry sources that quote or summarize Nepal's drone procedures. It is **not** a substitute for a lawyer's sign-off or a direct confirmation call to CAAN/MOHA before a real flight — Nepali aviation procedure is administered in person, in Kathmandu, by people who can and do exercise discretion.
+
+**Confidence ratings** are applied to every substantive claim:
+
+- **High** — drawn directly from a primary legal/government source (the CAAN UASR text itself, the CAAN drone webpage, the Sagarmatha National Park office page, a gazetted Act, FAA/EASA/CAAC/BCAA primary sources for the comparison section), or corroborated identically by three or more independent secondary sources.
+- **Medium** — stated consistently by two or more independent secondary sources (typically Kathmandu-based trekking/legal-services sites) but not directly verified against an unambiguous primary-source clause, OR drawn from a single primary-adjacent source (e.g., an official CAAN circular PDF) without broader corroboration.
+- **Low** — appears in only one source, or sources actively conflict with each other, or the figure looks like marketing copy rather than a cited tariff/penalty schedule. Treat Low-confidence figures (most fee and fine amounts below) as illustrative ranges to verify directly with CAAN/MOHA, not as quotable numbers for the app's UI.
+
+A dedicated section (§16) collects every place official guidance is ambiguous, contradictory, or simply silent, with a recommended interpretation for each.
+
+**A structural note on Nepal's drone law, up front:** unlike the FAA or EASA, Nepal does not regulate drones through one consolidated rulebook. Three documents do almost all of the work, and the app's rules engine should be built around this three-layer structure rather than a single "the law says" source of truth:
+
+1. **CAAN's Unmanned Aircraft System Requirements (UASR)** — the technical/operational rulebook (altitude, VLOS, categories, licensing).
+2. **Ministry of Home Affairs' RPA/Drone (UAV) Working Procedure, 2075** — the security-clearance and permit-routing procedure (who signs off, in what order).
+3. A shifting set of **site-specific procedures** issued by individual custodians of sensitive places (Sagarmatha National Park's own drone procedure is the clearest documented example) that layer additional, non-CAAN approvals on top of the first two.
+
+Almost every public confusion this research surfaced (§16) comes from secondary sources blending these three layers, or quoting an older superseded version of one of them, as if there were a single number that applies everywhere.
+
+---
+
+## Executive Summary
+
+Civilian drone ("RPA/Drone" or "UAV" in Nepali official usage) operation in Nepal is legal but tightly gated. Every drone, regardless of weight, must be **registered** with the Civil Aviation Authority of Nepal (CAAN) and obtain a separate **flight permit** before each operation; registration alone never authorizes flight (High confidence — this is stated explicitly on the registration certificate itself). The operative technical rulebook is CAAN's **Unmanned Aircraft System Requirements (UASR), Issue 01, dated April 2021**, issued under Rule 82 of the Civil Aviation Regulation, 2058 (2002), which sets a 100 m (328 ft) AGL altitude ceiling, a 300 m horizontal range from the pilot, mandatory visual line-of-sight, a hard 25 kg gross-mass cap, and a four-tier weight classification (High confidence, primary source).
+
+Layered on top of CAAN's technical rules is the Ministry of Home Affairs' **RPA/Drone Working Procedure, 2075 (2018/19)**, which routes every flight permit through a security-clearance process — District Administration Offices for lighter/lower-altitude flights, MOHA directly for everything else — and imposes a roughly 1 km no-fly buffer around security installations and VIP residences (Medium-High confidence, corroborated across many independent sources but not independently re-verified against the Working Procedure's own text, which is not posted in full on any official site this research could locate).
+
+A third layer applies in nationally protected areas: Sagarmatha (Everest) National Park publishes its **own** drone procedure requiring CAAN registration, a separate Department of National Parks and Wildlife Conservation approval, and a District Administration Office (Solukhumbu) approval — confirmed directly from the park's own government website (High confidence). The same pattern applies, with less direct documentation, to the Annapurna Conservation Area and other protected areas.
+
+Foreign nationals face no separate "pilot exam" requirement under the rules as published, but in practice clear more approval layers than residents (Department of Tourism, MOHA security clearance, and — for trekking regions — the relevant conservation-area authority), and tourism-industry sources report total foreign-visitor costs and timelines that vary enormously (anywhere from roughly USD 50 to several hundred dollars, days to months), which is exactly the kind of figure this report flags as Low confidence pending direct confirmation.
+
+Enforcement is real but not run on a published fixed-penalty schedule: violations are prosecuted under the **Civil Aviation Authority of Nepal Act, 2053 (1996)** and the **Electronic Transactions Act, 2063 (2008)**, with on-the-spot seizure, police referral, and CAAN auction of confiscated drones as the consistently documented enforcement mechanism (Medium-High confidence); specific fine amounts quoted by tourism blogs range from NPR 2,000 to NPR 500,000+ depending on the source and have not been traced to a single authoritative tariff (Low confidence — flagged explicitly in §16).
+
+Nepal has no GIS-published no-fly-zone shapefile or polygon dataset equivalent to the FAA's UAS Facility Maps or EASA member-state geozone portals (this absence was specifically checked for and not found — see §7). Any "no-fly zone map" layer the planned app builds will necessarily be assembled from named places (airports, parks, heritage sites) with general-vicinity coordinates rather than from an official authoritative polygon file, and this report is explicit throughout about which coordinates are well-established public landmarks (airports, UNESCO sites) versus which restriction categories (specific military installations, VIP residences) this report deliberately does not attempt to pin to precise coordinates, because no authoritative source publishes them and inventing precision would make the app's compliance data *less* trustworthy, not more.
+
+---
+
+## 1. Legal Framework
+
+### 1.1 The instrument hierarchy
+
+Nepali drone law sits inside the general civil aviation legal structure, not as a standalone statute. In descending order of legal authority:
+
+1. **Constitution of Nepal, 2072 (2015)**, Article 28 — guarantees privacy of body, residence, property, documents/data, correspondence, and character as a fundamental right; the legal backstop for every privacy-related drone restriction (High confidence, primary constitutional text corroborated by multiple legal sources).
+2. **Civil Aviation Authority of Nepal Act, 2053 (1996)** — the founding statute that creates CAAN and gives it regulatory and penal authority over all aircraft, including unmanned ones; Section 25 is the general penalty provision invoked in virtually every drone-violation prosecution found in this research (High confidence, primary source fetched directly).
+3. **Civil Aviation Regulation, 2058 (2002)** — the regulation made under the 1996 Act; **Rule 82** is the specific provision CAAN cites as its authority to issue UAS-specific requirements (High confidence, stated explicitly on the cover of the UASR itself).
+4. **Good Governance (Management and Operation) Act, 2064 (2007/08)**, Section 45 — the enabling provision the Ministry of Home Affairs relied on to issue its own drone working procedure, separate from CAAN's technical rules (Medium confidence — stated by one detailed secondary legal-explainer source, structurally plausible and consistent with how MOHA's procedure operates, but not independently confirmed against the Act's text).
+5. **Civil Aviation Security Rule, 2073 (2016)**, first amended 2076 (2019) — general aviation-security regulation; CAAN's own documents page lists this alongside the drone-specific materials, suggesting it forms part of the security-clearance backdrop for drone permits (Medium confidence — listed on CAAN's official documents page but its drone-specific content was not independently reviewed in full).
+6. **Electronic Transactions Act, 2063 (2008)** — invoked alongside the CAAA Act 2053 in drone-violation prosecutions, presumably covering the digital/recording-device dimension of unauthorized drone use (High confidence on the citation pattern, corroborated by multiple independent secondary sources).
+
+### 1.2 Regulation-by-regulation summary
+
+| # | Official title | Date issued | Latest revision found | Issuing authority | Legal status | Summary & implications for pilots | Confidence |
+|---|---|---|---|---|---|---|---|
+| 1 | Civil Aviation Authority of Nepal Act, 2053 | 1996 | — | Parliament of Nepal | Primary statute, in force | Establishes CAAN; Section 25 is the general penalty clause used to prosecute unlicensed/non-compliant drone flights. | High |
+| 2 | Civil Aviation Regulation, 2058 | 2002 | Amended (year of latest amendment not independently confirmed) | Government of Nepal | Subordinate regulation, in force | Rule 82 is CAAN's express legal basis for issuing UAS-specific technical requirements. | High |
+| 3 | CAAN Directive 07 (Unmanned Aircraft System) | Pre-2021 (exact date not located) | Superseded by UASR, April 2021 | CAAN | **Superseded / historical** | Nepal's first dedicated drone directive; an earlier "October 2015 Directive" amended it to add a 1,000 m security-zone buffer and a separate radio-frequency permission requirement. Useful only for historical context — do not apply its numeric limits (500 m/400 ft) to current operations. | Medium |
+| 4 | Unmanned Aircraft System Requirements (UASR), Issue 01 | April 2021 (cover date; internal pages also show "December 2020") | None found since 2021 | CAAN | **Current — the operative technical rulebook** | Sets categories, registration, the 100 m/300 m/VLOS/25 kg operating envelope, remote pilot licensing, and enforcement/appeal mechanics. Full text reviewed directly for this report. | High |
+| 5 | RPA/Drone (UAV) Working Procedure, 2075 (also cited as "UAV Working Procedure 2019") | 2075 B.S. (2018/19) | Not confirmed | Ministry of Home Affairs | **Current — the operative security/permit-routing procedure** | Routes flight-permit applications through District Administration Offices or MOHA directly depending on category/altitude; sets the ~1 km security/VIP buffer; restricts cargo (no explosives, biological agents, weapons, animals or people may be carried). Full text was not found posted on an official site — this report's description of it is reconstructed from CAAN's own circulars plus consistent secondary-source quotation, not read first-hand. | Medium |
+| 6 | Sagarmatha National Park "Drone Related Procedure, 2075" | 2075 B.S. (2018/19), approved by MOHA | Not confirmed | Sagarmatha National Park Office / Dept. of National Parks and Wildlife Conservation | Current | Site-specific layer: requires CAAN registration **plus** a DNPWC approval letter **plus** a Solukhumbu District Administration Office approval letter before SNP issues its own permission. Confirmed directly from the park's official government webpage. | High |
+| 7 | Civil Aviation Security Rule, 2073, First Amendment 2076 | 2016, amended 2019 | 2019 | CAAN / Government of Nepal | Current | General aviation-security regulation listed alongside drone materials on CAAN's documents page; likely forms part of the security-clearance chain for drone permits near airports and sensitive sites, though its drone-specific text was not independently reviewed. | Low-Medium |
+| 8 | Customs Act, 2064 (2008) | 2008 | Annual Finance Act amendments | Department of Customs | Current | General customs framework under which drones are classified, taxed (13% VAT plus an HS-code-specific duty), and require a customs clearance certificate before CAAN registration. Drones are explicitly **not** on Nepal's personal duty-free allowance list (unlike a single laptop, phone, or non-professional camera). | Medium |
+| 9 | Individual Privacy Act, 2075 (2018) | 2018 | Individual Privacy Regulation, 2077 (2020) | Parliament of Nepal | Current | Operationalizes the Article 28 constitutional privacy right; criminalizes unauthorized collection/disclosure of personal data and unauthorized recording; "unauthorized drone use"/"drone surveillance" is explicitly named in secondary legal commentary as one of the offense types that can be pursued as a *state*, not just private, complaint. Penalty: up to 3 years imprisonment and/or a fine up to NPR 30,000, plus court-ordered compensation. | Medium-High |
+| 10 | National Penal Code, 2074 (2017) | 2017 | — | Parliament of Nepal | Current | Criminalizes secret recording/photography without consent in private settings; relevant to aerial photography/videography use cases. | Medium |
+| 11 | Electronic Transactions Act, 2063 (2008) | 2008 | — | Parliament of Nepal | Current | Cited alongside the CAAA Act 2053 as the legal basis for prosecuting drone-related offenses with a digital/electronic-evidence dimension. | High (citation pattern) |
+| 12 | Data Act, 2079 (2022) | 2022 | — | Parliament of Nepal | Current but not fully operational | Creates (on paper) a Data Protection Authority that does not yet appear to be functioning; not yet directly relevant to day-to-day drone permitting but relevant to the data-handling obligations of any commercial drone-mapping/survey operation. | Medium |
+
+---
+
+## 2. Drone Classification
+
+CAAN's UASR (Reg. 101.5(b)) classifies every drone by Maximum Take-Off Weight (MTOW), including everything attached to or carried by the aircraft. This is the canonical classification — confirmed by directly reading the regulation text — and every secondary source found agrees with it, though several round the boundaries differently in casual writing.
+
+| Category | Designation | MTOW range | Registration required? | Typical permit pathway | Operational notes | Confidence |
+|---|---|---|---|---|---|---|
+| A | Very Low Risk | Under 250 g | **Yes — no weight-based exemption appears in the regulation text itself.** CAAN's own drone webpage carves out only "small flying toys," not camera-equipped Category A consumer drones, for private-premises-only use without permission. | District Administration Office (for flight above ~200 ft / outside private property) | Most secondary sources warn that tourists routinely assume sub-250 g drones (DJI Mini-class) are exempt the way they are in the US/EU/UK — this is incorrect for Nepal. | High (registration requirement) / Medium (the 200 ft / private-property carve-out specifics) |
+| B | Low Risk | 250 g – 2 kg | Yes | District Administration Office for operations above 200 ft AGL | Below 200 ft on private property, multiple sources describe an informal carve-out from needing a CAAN flight permission (not from registration). | Medium |
+| C | Regulated Low Risk | 2 kg – 25 kg | Yes, plus physical verification of the drone at CAAN's office | Ministry of Home Affairs (not DAO) | Third-party liability insurance reported as required for this category. | Medium |
+| D | Regulated High Risk | Above 25 kg | Yes — but note Reg. 101.37 of the UASR caps the *entire Part 101 framework* at 25 kg gross mass, meaning drones over 25 kg may fall outside what UASR governs and require bespoke CAAN authorization rather than a standard Category D permit pathway. | Ministry of Home Affairs / bespoke CAAN authorization | Used in tourism-industry sources mainly as a label for heavy-lift cargo, industrial, and inspection platforms (e.g., the DJI FlyCart 30 used on Everest, see §12). | Medium (the label exists and is used) / **this report flags the >25kg/Part 101 interaction as a genuine ambiguity — see §16.** |
+
+No separate insurance, pilot-certification, or operational-limitation table is published per category beyond what is captured above; CAAN's UASR Part 102 (remote pilot licensing) applies in principle across categories rather than scaling cleanly by category, which is itself one of the structural gaps noted in §16.
+
+---
+
+## 3. Registration Requirements
+
+**Which drones require registration:** All of them. UASR Reg. 101.5(a) states "every person lawfully entitled to the possession of a UA who will operate a UA in Nepal shall register that UA" — no weight floor is written into this clause (High confidence, primary source). CAAN's own drone webpage reinforces this with only a narrow private-property "small flying toy" carve-out.
+
+**Where:** Flight Safety Standards Department (FSSD), CAAN, Sinamangal, Kathmandu — confirmed as the registration office across every source, including CAAN's own application form (High confidence). Online registration (caanepal.gov.np/drone) reportedly launched in 2025, alongside the long-standing in-person process; multiple sources from late 2025/early 2026 describe the online portal as unreliable, so in-person FSSD registration remains the dependable path (Medium confidence).
+
+**Required documents** (per UASR Appendix I, the primary-source registration requirements, supplemented by consistent secondary-source detail):
+
+- Completed application **Form RPA/Form/001**
+- One recent passport-size colour photograph of the applicant
+- Drone details: manufacturer, model, serial number, manufacture date, type, payload type, take-off weight, colour, retailer name
+- Copy of citizenship certificate, valid passport, or company registration certificate (as applicable)
+- Copy of the drone's manual/specification sheet
+- Colour photo of the drone clearly showing its model and serial number
+- Stated purpose of operation
+- **Either** a copy of the retailer's VAT bill (if purchased in Nepal) **or** a copy of the customs clearance certificate (if imported)
+- For foreign nationals: passport with valid Nepal visa, and (per several independent sources) a Tribhuvan International Airport customs declaration of the drone on arrival
+- CE marking or a type-approval certificate for the drone model (Medium confidence — appears in multiple 2026-dated tourism-industry sources, not found in the UASR text itself)
+
+**Costs:** This is the single most inconsistent figure across all sources gathered, and the app's UI should not hard-code a number without independent confirmation. Two independent late-2025 sources converge on **USD 50 + 13% VAT for foreign nationals**, with one explicitly stating CAAN raised the fee from roughly USD 10 to USD 50 in April 2025 and added a USD 10 renewal fee. Other sources (2025–2026, both tourism-blog in nature) instead cite NPR 10,000–15,000 or a flat USD 150 for foreign nationals. **Confidence: Low** on any specific number — the direction (foreigners pay materially more than the Nepali-citizen rate, and registration fees rose at some point around 2025) is more reliable than the exact figure.
+
+**Validity & renewal:** Registration certificates are reported as valid for **one year**, renewable (Medium-High confidence, consistent across most sources, though not independently confirmed against UASR's own text, which references renewal without stating a fixed term in the portions retrieved).
+
+**Processing time:** Two to three business days after a complete application is accepted (Medium confidence, single detailed source, plausible and specific).
+
+**Exemptions:** None found beyond the narrow "small flying toy operated entirely within private premises" carve-out described on CAAN's own webpage — and even that is described there as a *flight-permission* carve-out, not unambiguously a *registration* carve-out, which is itself flagged in §16.
+
+**Registration ≠ permission to fly.** This is stated explicitly on the certificate of registration itself (UASR Appendix III, Note 8, primary source, High confidence): a separate flight permit is always required.
+
+---
+
+## 4. Permit System
+
+Nepal does not operate a single unified "drone permit"; it operates a **routing procedure** that determines which office issues the flight authorization, based on category, altitude, location, and operator nationality/purpose. The clearest documented version of the routing logic:
+
+### 4.1 General routing logic (Medium-High confidence — consistent across many independent sources, structurally corroborated by the official CAAN drone webpage's "tourists must obtain prior permission from following agencies" framing, though the *exact* threshold numbers vary slightly between sources)
+
+1. **Category A/B (under 2 kg), flown below roughly 200 ft AGL, on private property** → no separate flight permission reported as necessary beyond registration (though local police/security-agency courtesy notice is still recommended for any public-area flight).
+2. **Category A/B, flown above ~200 ft AGL or in a public area** → flight permit application to the relevant **District Administration Office (DAO)**, which coordinates with the local civil aviation office if one exists.
+3. **Category C/D, or any commercial operation, or flight in a border/sensitive area** → application routed to the **Ministry of Home Affairs** directly, which CAAN itself is described as forwarding the security-clearance request to (adding roughly 5–15 working days per one detailed source).
+4. **National parks / conservation areas** → an additional, independent approval from the **Department of National Parks and Wildlife Conservation** (or the relevant conservation area authority, e.g., ACAP for Annapurna, MCAP for Manaslu) plus the local DAO, layered on top of 1–3 above. Confirmed directly for Sagarmatha National Park from the park's own website (§1.2, row 6).
+5. **Heritage/religious sites** → coordination with the Department of Archaeology or the relevant temple trust board (Medium confidence, single detailed source, but structurally consistent with the general "do not disturb heritage sites" rule appearing in CAAN's own published conditions).
+6. **Foreign nationals**, regardless of category, additionally clear the **Department of Tourism** and submit an authorization letter to a local person/agency, biodata, citizenship/passport copy, and a compliance-commitment letter (Medium-High confidence, the foreign-national document list is the most consistently repeated checklist across sources).
+7. **Frequency/spectrum**: if the drone's radio link exceeds roughly 2.4 MHz of bandwidth, a separate clearance from the Ministry of Communication and Information Technology (successor to the old Ministry of Information and Communication) is reportedly required (Medium confidence — this requirement traces back to the historical 2015 Directive and is repeated by some but not all current sources, so it may or may not still be actively enforced as a separate step).
+
+### 4.2 Permit characteristics
+
+| Attribute | Detail | Confidence |
+|---|---|---|
+| Validity | Maximum 3 months from issue (UASR Reg. 101.9(a)(1) caps area-approvals at 3 months; MOHA permit validity is separately and consistently reported as 3 months across many secondary sources) | High |
+| Renewal | Permitted with a stated reason; renewal period itself capped at a further 3 months | Medium-High |
+| Transferability | Not transferable to another person or organization | Medium |
+| Required underlying documents | Registration certificate/UIN, flight-consent letter, purpose and exact location (often requested as a Google Maps/flight-location map), start/end dates and times, foreign-national authorization letter where applicable | Medium-High |
+| Insurance | Third-party liability insurance reported as required for Category C/D drones | Medium |
+| Appeals | UASR Part 102 provides an explicit appeal mechanism for remote-pilot-licence decisions (denial, suspension, revocation, or new conditions) — apply in writing to CAAN; no equivalent appeal text was located specifically for flight-permit (as opposed to pilot-licence) denials. | High (licence appeals) / Low (permit-denial appeals — likely follows general administrative-law channels, not drone-specific) |
+| Disaster/emergency flights | A special expedited pathway exists for domestic or foreign experts to fly under CAAN/government approval during a declared disaster or crisis, but the drone must operate under the direct authority of a security/liaison officer (in some sources specifically a Nepal Army officer) in the control area. | Medium-High (consistent historical and current sourcing) |
+| Prohibited payloads | Explosives, biological agents, anything posing a security risk, animals, and humans may not be carried by an RPA/drone. | Medium-High |
+
+### 4.3 Use-case notes
+
+- **Recreational/hobbyist:** Same registration + permit chain as everyone else; no separate "recreational" carve-out beyond the private-property/sub-200ft scenario above.
+- **Commercial (photography, videography, filming):** Additionally requires a letter of recommendation from the relevant ministry; one source specifically notes a 25% surcharge on the base permit cost for documentary/cinematic filming (Low confidence, single source).
+- **Survey/mapping/agriculture/infrastructure inspection:** Routed as Category C/D commercial operations in practice; no separate published permit class was found — treat as "commercial, MOHA-routed" until confirmed otherwise.
+- **Government operations:** Security agencies flying RPA/drones are described as needing to coordinate with relevant ministries and CAAN, suggesting an internal rather than public-facing permit process.
+- **NGO operations:** No distinct published category; in practice follows the foreign-organization or commercial pathway depending on the NGO's registration status and the operator's nationality.
+- **Research:** A distinct documented pathway exists requiring Department of National Parks and Wildlife Conservation permission (for protected-area research) layered on the standard chain (per CAAN's own drone webpage, which lists "research and study purpose" as a named category).
+
+---
+
+## 5. Flight Rules
+
+This section is anchored in the UASR primary text wherever possible (High confidence items are direct regulation citations), supplemented by the MOHA-layer rules where the UASR is silent.
+
+| Rule | Requirement | Source / confidence |
+|---|---|---|
+| **Maximum altitude** | 100 m (328 ft) AGL under standard operating conditions (Reg. 101.7, 101.25); operating above this requires CAAN/ATS approval and, beyond 5 km from an aerodrome, a NOTAM filed at least 24 hours ahead. | High (primary source) |
+| **Minimum altitude** | None specified in the regulation. | High (confirmed absence) |
+| **Visual Line of Sight (VLOS)** | Mandatory for standard operations (Reg. 101.27); defined as direct, unaided visual contact (corrective lenses/contacts permitted; electronic/optical aids are not, except via a trained observer in an FPV setup). | High (primary source) |
+| **Horizontal range from pilot** | 300 m under standard conditions (Reg. 101.7(a)(2)). *Many tourism-industry sources still quote 500 m — this is the figure from the superseded 2015 Directive; treat 300 m as current.* | High (primary source) / flagged conflict, see §16 |
+| **FPV operations** | Permitted only with a trained, competent UA observer who independently maintains VLOS and surrounding-airspace awareness and stays in direct communication with the pilot (Reg. 101.27(d)(2)). | High (primary source) |
+| **Night operations** | UASR Reg. 101.29(a)(2) prohibits flying at night outright, and Reg. 101.31 ("Night Operations"), which would presumably set out an authorization pathway, is marked **RESERVED** — i.e., not yet written. Practical effect: night flight currently has no defined route to approval under CAAN's own text. | High (primary source — and a clear, important gap, see §16) |
+| **BVLOS operations** | Not available as a standard pathway. Possible only via the same beyond-5km/above-100m special-approval process (24-hour-advance NOTAM, Class G airspace only) — and even that process does not explicitly waive the VLOS requirement, which is one of this report's flagged structural ambiguities (§16). | High (primary source on the approval mechanics) / Low (whether true BVLOS is actually achievable under the current text) |
+| **Flights over people** | Prohibited unless the person is directly participating in the operation, sheltered under a structure/inside a stationary vehicle, or — with consent — no closer than 15 m; absent consent, a 30 m horizontal buffer from any uninvolved person is required (Reg. 101.35). | High (primary source) |
+| **Flights over roads/vehicles** | No drone may be operated from a moving vehicle, vessel, or manned aircraft (Reg. 101.43(b)); flying *over* roads/traffic is governed by the general over-people and populated-area restrictions rather than a distinct road-specific rule. | High (primary source) |
+| **Flights over buildings/urban operations** | Standard conditions bar operating "over a populated area" outright (Reg. 101.7(b)(3)) — this is a blanket prohibition without a stated population-density threshold, meaning routine urban flight in Kathmandu, Pokhara, etc. functionally requires a CAAN-approved area rather than falling under standard conditions at all. | High (primary source) |
+| **Rural operations** | No distinct rural carve-out; the same standard-conditions envelope applies, simply with fewer of the populated-area/people-proximity triggers in practice. | High (by absence) |
+| **Weather restrictions** | VMC (Visual Meteorological Conditions) only; no flight in or into cloud; pilot must be able to maintain VLOS through the whole flight (Reg. 101.27(c)(3), 101.29). | High (primary source) |
+| **Airport/aerodrome distance** | 5 km from the movement area of any aerodrome without specific authorization (Reg. 101.7(b)(5), 101.23); even with authorization at an uncontrolled aerodrome, flight is capped at 100 m AGL, 15 minutes' endurance, 300 m range, and requires a UA observer. Controlled aerodromes require ATC authorization. | High (primary source) |
+| **Military/security-installation distance** | A roughly 1,000 m (1 km) buffer around "security agencies and sensitive areas" is consistently reported across both the historical 2015 Directive and current MOHA-procedure-derived secondary sources; one detailed source describes a tiered system (1 km for military/"safety office," 500 m for "other safety departments"), which has not been independently confirmed against an official text. | Medium-High (1 km figure) / Low (the tiered 500m/1km split) |
+| **Government building restrictions** | The President's, Vice-President's, and Prime Minister's offices/residences (Singha Durbar and related VVIP locations in Kathmandu) carry a reported ~1 km aerial-radius restriction, corroborated by two independent sources. | Medium-High |
+| **National park restrictions** | Confirmed directly (Sagarmatha National Park) as requiring CAAN registration plus DNPWC approval plus local DAO approval before the park issues its own permission; the same general pattern (additional conservation-area-specific layer) is reported, with less direct documentation, for Annapurna Conservation Area, Langtang, and Manaslu. | High (Sagarmatha, primary) / Medium (other parks, by reported pattern) |
+| **Wildlife restrictions** | No drone-specific wildlife-disturbance rule was located beyond the general national-park/conservation-area permission requirement above; Sagarmatha National Park's own reasoning for restricting *helicopter* sightseeing flights (noise disturbance to Himalayan tahr/goral, breeding/feeding disruption) is well documented and is the most likely policy rationale extended to drones in the same areas. | Medium |
+| **Border restrictions** | A 5 km horizontal buffer from international boundaries is reported across multiple sources structurally similar to the airport buffer, though this was not located inside the UASR text itself (the UASR's 5 km clause is specifically aerodrome-worded) — likely a MOHA-procedure-layer rule rather than a CAAN/UASR one. | Medium |
+| **Emergency-response restrictions** | A drone may not be operated over an area where fire, police, or other public-safety/emergency operations are underway, without the approval of the person in charge of that operation (Reg. 101.7(c)). | High (primary source) |
+| **Critical infrastructure (hydropower, power stations, transmission, communications towers)** | Generally captured under the broader "restricted/prohibited area as defined by Government of Nepal" clause (Reg. 101.7(b)(1)-(2)) rather than a named, drone-specific infrastructure rule; no published list of which hydropower or transmission sites are formally gazetted as restricted/prohibited areas was located. | Low — **this is a genuine documentation gap, not just a sourcing gap; flagged in §16.** |
+| **Crowd restrictions** | Flying over crowds/public gatherings/sporting events is consistently described as prohibited without specific authorization. | Medium-High |
+| **Privacy/photography/video restrictions** | Layered: UASR's own historical predecessor explicitly banned privacy-infringing filming from "toy" drones; the Individual Privacy Act 2075 and National Penal Code 2074 supply the general criminal/civil privacy exposure for any aerial photography of identifiable people without consent (see §1.2, rows 9–10). | Medium-High |
+| **Delivery operations** | No standard published pathway; CAAN's general framework (registration + permit + category rules) would apply, but Nepal's most prominent real-world example — Airlift Technology's cargo-drone resupply operation on Everest — was reportedly **cancelled by the government in 2026** after operating since 2024 in partnership with the Sagarmatha Pollution Control Committee, illustrating that even an apparently successful, safety-positive delivery use case can be reversed at the government's discretion. (See §12, Historical Timeline.) | Medium (the cancellation; secondary journalism source, not yet corroborated by an official government statement in this research pass) |
+| **Autonomous flight** | UASR's definition of "fly-away" implies awareness of autonomous/pre-programmed flight as a distinct risk category; multiple tourism-industry sources state fully autonomous/pre-programmed flight is prohibited and that radio-transmission-based direct control is the standard required method, consistent with ICAO guidance. | Medium |
+| **Swarm operations** | No Nepal-specific swarm rule was located in any source. | Low — gap, not just low confidence; treat as unaddressed. |
+| **Signal interference / radio frequency** | The operator's control-link frequency must not interfere with security-agency communications, and (per some sources) a separate Ministry of Communication and Information Technology clearance is required above ~2.4 MHz bandwidth. | Medium |
+| **Right of way** | UA must give way to and remain clear of all manned aircraft, on the ground and in flight, at all times (Reg. 101.33). | High (primary source) |
+| **Single-operator, single-aircraft rule** | A person may operate only one UA at a time (Reg. 101.7(d), 102.5(d)). | High (primary source) |
+| **Alcohol/drugs** | No remote pilot, flight crew member, or UA observer may operate within 8 hours of consuming alcohol, while under its influence, or while impaired by any drug (Reg. 101.45). | High (primary source) |
+| **Accident/incident reporting** | Any UA operation causing injury to a person or damage to property other than the UA itself must be reported to CAAN within 48 hours (Reg. 101.009). | High (primary source) |
+
+---
+
+## 6. Restricted Airspace
+
+**A methodological note before the table:** Nepal does not publish an official, coordinate-level no-fly-zone dataset. Every coordinate below falls into one of two honest categories, and the table says explicitly which applies to each row:
+
+- **(A) Well-established public landmark coordinates** — airports (published in global aeronautical databases under their ICAO/IATA codes) and UNESCO World Heritage Site locations (published by UNESCO and every mapping service). These are safe to use as map anchors; what's *not* officially published is the exact restriction radius/polygon around them, which this report gives as the most-corroborated reported figure, clearly marked as reported-not-gazetted.
+- **(B) Categories this report deliberately does not pin to specific coordinates** — individual military installations and named VIP residences. Two reasons: no official source publishes a coordinate list for these, and a from-scratch, original compilation of "where Nepal's sensitive security sites are" is not something this report should manufacture by guesswork even for a protective/compliance purpose. For these categories, the app should treat the restriction as a *rule* (e.g., "1 km buffer around any security installation") to be checked against a general-purpose, independently-sourced basemap layer (see §7) rather than a list this research invents.
+
+| Location / category | Coordinates | Restriction type & reported radius | Legal source | Authority responsible | Permit possible? | Confidence |
+|---|---|---|---|---|---|---|
+| Tribhuvan International Airport (Kathmandu) | 27.6966° N, 85.3591° E (A — public airport reference point) | No drone activity in airport/approach areas at any altitude (UASR 4.7, historical text); 5 km general aerodrome buffer (UASR Reg. 101.7/101.23, current) | UASR + Civil Aviation Regulation 2058 | CAAN / Air Traffic Control | Only via the controlled-aerodrome ATC-authorization pathway | High (airport location, rule existence) / Medium (whether 5 km is gazetted as a precise circle vs. a control-zone shape) |
+| Pokhara International Airport | approx. 28.2 ° N, 83.99° E (A) | Same 5 km aerodrome buffer | UASR | CAAN | Same as above | High/Medium, as above |
+| Gautam Buddha International Airport (Bhairahawa) | approx. 27.51° N, 83.41° E (A) | Same 5 km aerodrome buffer | UASR | CAAN | Same as above | High/Medium, as above |
+| Lukla / Tenzing–Hillary Airport | approx. 27.687° N, 86.731° E (A) | Same 5 km aerodrome buffer — specifically and repeatedly called out in Everest-trekking sources given its role as the gateway to Sagarmatha National Park and extremely dense rescue-helicopter traffic | UASR | CAAN | In principle yes, in practice rarely granted near Lukla given helicopter density | High (the airport and the rule) |
+| Other domestic airports/airstrips named on CAAN's own site (Nepalgunj, Simara, Dhangadhi, Biratnagar, and others) | Public airport reference points (A) | Same 5 km buffer | UASR | CAAN | Same as above | High |
+| Sagarmatha National Park (Everest region) | General park vicinity only — Solukhumbu district, ~1,148 km² (B-adjacent: the park's existence and general region are public/UNESCO-documented; this report does not attempt the park's precise boundary polygon, which is a genuine GIS dataset CAAN/DNPWC may hold but did not surface in this research pass) | Drone flight requires CAAN registration + DNPWC approval letter + Solukhumbu DAO approval letter, *before* SNP issues its own permission; recreational tourist drone use is, in practice, almost never approved | SNP's own "Drone Related Procedure, 2075," approved by MOHA | Sagarmatha National Park Office / DNPWC | Rare; primarily research, documentary, or government-approved projects | High (the procedure and its existence — confirmed directly from the park's official site) / Low (the park's precise GIS boundary) |
+| Annapurna Conservation Area | General region only | Drone flight requires permission from MoHA, Department of Tourism, CAAN, **and** the Conservation Area Project; research use additionally requires DNPWC sign-off | National Trust for Nature Conservation / ACAP procedures | ACAP / NTNC | Yes, with the full multi-agency chain | Medium |
+| Langtang & Manaslu Conservation Areas | General region only | Reported to follow the same multi-agency pattern as Annapurna/Sagarmatha | Inferred from the consistent conservation-area pattern | Respective conservation area authorities | Likely, with the full chain | Low-Medium (pattern is well-established; area-specific confirmation wasn't independently found) |
+| UNESCO World Heritage Sites in Kathmandu Valley (Pashupatinath, Boudhanath, Swayambhunath, and the Kathmandu/Patan/Bhaktapur Durbar Squares) | Public UNESCO-documented coordinates (A) | Reported ~1 km no-fly buffer around religious/heritage/sacred sites; general "do not fly over heritage sites" condition appears on CAAN's own published list of no-fly categories | UASR general conditions + MOHA procedure (reported) | CAAN / Department of Archaeology / relevant temple trust | Rare for recreational use; documentary/research projects coordinate directly with the Department of Archaeology or temple trust board | Medium |
+| VVIP offices/residences (President, Vice-President, Prime Minister — Singha Durbar and related central-Kathmandu government complex) | Singha Durbar itself is a famous, publicly mapped central-government landmark (A); this report does not attempt to pin individual residential buildings (B) | Reported ~1 km aerial-radius restriction | MOHA procedure (reported, corroborated by two independent sources) | Ministry of Home Affairs / security agencies | Essentially never for non-government operators | Medium-High (the rule) / not attempted (precise residence coordinates) |
+| Military installations / Nepal Army facilities generally | **Not provided** — see methodological note above (B) | Reported ~1 km buffer (one source suggests 500 m for lower-tier "safety departments") | MOHA procedure (reported) | Nepal Army / Ministry of Home Affairs | Essentially never for non-government operators, except the disaster-response carve-out under direct security-officer supervision | Medium-High (the rule exists) / not attempted (locations) |
+| International border zone | Linear feature, not a point — reported 5 km buffer | Reported, structurally similar to the airport buffer | MOHA procedure (reported) | Ministry of Home Affairs / border security agencies | Essentially never without specific high-level clearance | Medium |
+| Police headquarters / correctional facilities | Not enumerated | Captured under the general "security agencies and sensitive areas" ~1 km buffer rather than a separately published rule | MOHA procedure (reported) | Nepal Police | Rare | Low-Medium |
+| Hydropower plants / power stations / high-voltage transmission infrastructure | Not enumerated | Captured under the general "restricted/prohibited area as defined by Government of Nepal" clause; no published list of which specific sites are formally gazetted found | UASR Reg. 101.7(b)(1)-(2) (general clause only) | CAAN / Nepal Electricity Authority (inferred) | Case-by-case; commercial inspection use cases (a legitimate, common drone application) would need to confirm site-by-site status directly with CAAN | Low — **documentation gap, see §16** |
+| Embassies / diplomatic missions | Not enumerated as a distinct category in any source found | Likely captured under the general sensitive-area buffer rather than a named rule | Not confirmed | Ministry of Home Affairs (inferred) | Not confirmed | Low — gap |
+| Temporary restricted zones / VIP movement / special events / disaster response areas | By definition not fixed locations | UASR Reg. 101.7(b)(4) covers areas "notified for certain periods by local, state and Federal Governments"; CAAN's NOTAM mechanism (Reg. 101.9) is the formal publication channel | UASR | CAAN (publication) / relevant local authority (designation) | Temporary by nature | High (the mechanism exists) / not applicable (no fixed coordinates) |
+
+---
+
+## 7. Geographic Data Collection — Recommendations for the App's GIS Layer
+
+Because no official Nepal-government no-fly-zone shapefile or polygon dataset was located in this research (this was specifically searched for and not found — treat that absence itself as a Medium-confidence finding, since a negative result is harder to be fully certain about than a positive one), the flight-planning app's map layer will need to be assembled from several *separate* authoritative sources rather than one official download. Recommended building blocks:
+
+- **Administrative boundaries (district, municipality):** Survey Department of Nepal (the national mapping authority) and the Humanitarian Data Exchange (HDX), which hosts Nepal administrative-boundary shapefiles contributed by OCHA/UN agencies — generally reliable and free to use.
+- **Airports/helipads:** OurAirports and OpenFlights both maintain free, regularly updated global airport datasets with ICAO-coded coordinates that will cover every CAAN-listed Nepali aerodrome; cross-reference against CAAN's own airport-profile pages for the handful of domestic strips.
+- **Protected areas / national parks / conservation areas:** The World Database on Protected Areas (WDPA, run by UNEP-WCMC/IUCN) publishes polygon boundaries for Sagarmatha, Annapurna, Langtang, Manaslu, and Nepal's other gazetted protected areas — this is the right source for park *boundaries*, even though it won't tell you the drone-permit rule layered on top (that has to come from this report's §6 and direct confirmation with DNPWC).
+- **UNESCO World Heritage Sites:** UNESCO's own World Heritage Centre publishes precise coordinates and boundary/buffer-zone polygons for the Kathmandu Valley sites.
+- **Elevation:** SRTM (NASA) or Copernicus DEM — both freely licensed, both adequate resolution for flight-planning altitude-above-terrain calculations in Nepal's mountainous terrain (important given CAAN's rules are AGL-based, and Nepal's terrain relief makes AGL very different from a flat-earth altitude assumption).
+- **Roads / urban boundaries / population density:** OpenStreetMap (community-maintained but strong coverage in Nepal, including in trekking regions) for roads and built-up areas; WorldPop or the Nepal census (Central Bureau of Statistics) for population-density layers relevant to the "populated area" flight restriction.
+- **Military / sensitive-site polygons:** Deliberately not recommended as a "go find a dataset" item — see §6's methodological note. If the app needs this layer, the right move is a direct written request to CAAN/MOHA for an official list, not assembling one from open sources, given the sensitivity.
+
+**Coordinate reference system:** WGS84 (EPSG:4326) is the de facto standard across every source above and is what CAAN's own aeronautical charts would use; recommended as the app's canonical CRS, projecting to a local UTM zone (Nepal spans UTM zones 44N and 45N) only for distance/buffer calculations.
+
+**Licensing:** OSM is ODbL (share-alike attribution); WDPA and UNESCO data are generally free for non-commercial/research use with attribution but check current terms before commercial deployment; HDX-hosted boundary files vary by contributor — check each dataset's individual license page.
+
+---
+
+## 8. Drone Import Regulations
+
+| Aspect | Detail | Confidence |
+|---|---|---|
+| Governing law | Customs Act, 2064 (2008), plus the annually-revised Customs Tariff (HS-code based, current edition 2082/83 i.e. FY 2025/26) and that year's Finance Bill | High (general framework) / Medium (drone-specific HS code and duty rate — not independently confirmed; internationally drones now generally sit under HS heading 8806 "unmanned aircraft" since the HS2022 revision, but Nepal's specific applied duty rate for that heading was not verified in this research and should be checked directly against the Department of Customs' current tariff schedule or the Nepal Trade Portal's duty calculator before quoting a number in the app) |
+| Personal duty-free allowance | Explicitly does **not** include drones — unlike a single laptop, phone, or non-professional camera, which do get a personal duty-free allowance | Medium |
+| VAT | 13%, applied on customs value plus duty plus any excise, consistent with Nepal's general import-tax structure | High (general VAT rate) |
+| Process for travelers | Declare the drone (and spare lithium batteries, subject to airline/IATA dangerous-goods rules) at the Customs **Red Channel** at Tribhuvan International Airport on arrival; obtain a Customs Clearance Certificate, which is then a required document for CAAN registration | Medium-High |
+| Process for commercial/bulk imports | Requires CDO and CAAN permits in addition to standard customs clearance — i.e., import clearance and flight-permit clearance are explicitly linked for drones in a way they aren't for most consumer electronics | Medium |
+| Restricted drone models | No published Nepal-specific banned-model list was located (unlike, e.g., some countries' restrictions on specific manufacturers); the CE-marking/type-approval requirement (§3) functions as a de facto technical gate instead | Low — absence noted, not confirmed as a deliberate policy choice |
+| Temporary imports (e.g., a tourist's own drone, re-exported on departure) | Functionally handled through the same customs-declaration-plus-CAAN-registration process; several Bhutan-style "customs holds the device until departure" reports exist for *Bhutan*, not Nepal — Nepal's process is reported as declare-and-register-and-fly-with-permit, not hold-at-customs, for legitimately permitted operators | Medium |
+| Export regulations | No Nepal-specific drone export restriction was located in this research pass; this is a genuine gap rather than a confirmed "no rule exists" finding | Low — unresearched, flag for a follow-up pass |
+
+---
+
+## 9. Foreign Operators
+
+| Operator type | Documented requirements | Confidence |
+|---|---|---|
+| **Tourists (recreational)** | Drone registration (CAAN/FSSD) → flight permit application, typically routed through the District Administration Office for the trekking/visiting area, with Ministry of Home Affairs security clearance and Department of Tourism sign-off layered in; Tribhuvan International Airport customs declaration on arrival; passport + visa copies; no separate "foreign pilot exam" is described in the rules as published, though some tourism-industry sources nonetheless describe needing a remote pilot licence for heavier categories, consistent with UASR Part 102 applying regardless of nationality. Lead time of 2–4 weeks is the most commonly repeated planning guidance. | Medium-High (process structure) / Low (specific fees and total timelines, which vary wildly source to source) |
+| **Researchers / academic institutions** | Additional Department of National Parks and Wildlife Conservation sign-off for any protected-area research, on top of the standard foreign-operator chain | Medium |
+| **NGOs** | No distinct published category; treated in practice as either a foreign-organization commercial applicant or, for an internationally registered NGO with local Nepali registration, potentially closer to the domestic-organization pathway — not independently confirmed | Low |
+| **Foreign companies / international survey companies** | Commercial pathway via Ministry of Home Affairs, plus letter of recommendation from the relevant ministry for the specific work; Category C/D third-party insurance requirement applies | Medium |
+| **International media** | Filming/commercial pathway; one detailed source describes needing sign-off from the Ministry of Culture, Tourism and Civil Aviation, Ministry of Defense, Ministry of Foreign Affairs, and Ministry of Federal Affairs for commercial filming specifically in the Everest region — illustrating that the "standard" chain can expand considerably for high-sensitivity locations | Medium |
+| **Diplomatic missions / international organizations** | No distinct published pathway found; would presumably route through the Ministry of Foreign Affairs in addition to the standard chain, but this is inference, not a confirmed finding | Low — gap |
+
+A specific, well-documented example: foreign nationals seeking to fly in the **Everest/Sagarmatha region** face a reported additional **non-refundable park permit fee of roughly USD 1,500–2,000**, corroborated by two independent sources, on top of the standard registration and permit costs, plus the multi-agency chain in §6's Sagarmatha row, plus — per several sources — an expectation that a government-appointed liaison officer accompany operations, which adds to the daily operating cost (Medium confidence on the existence and rough scale of this fee; Low confidence on the precise figure).
+
+---
+
+## 10. Enforcement
+
+**Legal basis:** Violations are prosecuted under the **Civil Aviation Authority of Nepal Act, 2053**, Section 25, and the **Electronic Transactions Act, 2063** (High confidence — this citation pairing is the most consistent enforcement-related fact across every source, including an official CAAN circular that states violators are "subject to punishment pursuant to Civil Aviation Authority Act (2053)").
+
+**Documented enforcement mechanism** (Medium-High confidence, consistent structural description across many independent sources):
+
+1. An unlicensed or non-compliant flight is identified (by police, army, CAAN inspectors, or — per several 2026-dated sources — increasingly by ordinary residents reporting suspicious activity).
+2. The drone is seized immediately; seizure is explicitly **not** contingent on a prior warning.
+3. A police report is generated and the drone, with the report, is sent to CAAN.
+4. CAAN may auction the confiscated drone under prevailing law, with proceeds directed to a government revenue account.
+5. Separately, a privacy-violation victim may file a civil/criminal complaint under the Individual Privacy Act (District Court, 3-month limitation period) — and notably, "unauthorized drone use"/"drone surveillance" is specifically named in legal commentary as one of the offense types that can additionally be pursued as a **state** party complaint, not only a private one.
+6. CAAN retains inspection, testing, and records-demand authority over the UAS, the remote pilot, and any UA observer (UASR Reg. 101.007, primary source).
+7. For remote-pilot-licence holders specifically, UASR Part 102 sets out a formal show-cause → response → cancellation/suspension process, including an explicit 90-day cap on a suspension if CAAN hasn't resolved the underlying case (Reg. 102.9–102.11, primary source, High confidence).
+
+**Penalties — fines:** This is the weakest-sourced numeric claim in the entire report. Across roughly a dozen tourism/legal-blog sources gathered, first-offense "no permit" fines were variously quoted as NPR 2,000–5,000, NPR 5,000–50,000, NPR 25,000–100,000, and NPR 100,000–500,000+ for aggravated cases (airports/security zones) — **none of these were traced back to a single cited, dated, official tariff schedule or gazette notice.** The pattern (escalating fines with severity; airports/security/heritage-site violations treated as more serious; repeat-offense premiums) is plausible and broadly consistent with how the underlying CAAA Act's penalty clause typically operates, but the *specific numbers* should be treated as Low confidence, illustrative-only, and explicitly not surfaced as authoritative figures in the app's UI without direct confirmation from CAAN.
+
+**Penalties — non-monetary:** Drone confiscation (auctioned, not returned) is the most consistently documented and highest-confidence penalty. Several 2026-dated sources also describe park-permit blacklisting for foreigners caught operating illegally in national parks, and the possibility of deportation for serious/repeat violations — both Medium confidence, plausible but not traced to a specific statutory provision.
+
+**Privacy Act-specific penalty:** Up to 3 years' imprisonment and/or a fine up to NPR 30,000, plus court-ordered compensation (Medium-High confidence — this figure, unlike the general drone fines above, is repeated consistently and traces to the Privacy Act's own penalty clause as summarized by multiple independent legal sources).
+
+**Case examples / public enforcement actions:** No specific, named, dated drone-confiscation case was located and independently verified in this research pass (the closest documented regulatory enforcement dispute found was the December 2024–2025 CAAN-vs-Sagarmatha National Park clash over *helicopter* sightseeing flights, not a drone case specifically — see §12 and §16 for why that dispute is still directly relevant to how drone jurisdiction works). This is a genuine gap; a dedicated pass through Nepali news archives (Kathmandu Post, Setopati, myRepublica, Onlinekhabar) for named drone-seizure stories would strengthen this section considerably.
+
+---
+
+## 11. Government Agencies
+
+| Agency | Role in drone regulation | Official site | Confidence |
+|---|---|---|---|
+| **Civil Aviation Authority of Nepal (CAAN)** | Primary technical regulator: registration, UIN issuance, remote pilot licensing, UASR enforcement, airspace/aerodrome authorizations, NOTAM publication | caanepal.gov.np (drone-specific page: caanepal.gov.np/drone) | High |
+| **Ministry of Home Affairs (MOHA)** | Security clearance; issues and administers the RPA/Drone Working Procedure 2075; routes/approves flight permits for Category C/D and most public-area/foreign-operator flights | moha.gov.np | High (role) / Medium (specific procedure text not independently located in full) |
+| **Ministry of Culture, Tourism and Civil Aviation** | Parent ministry overseeing both CAAN and the Department of Tourism; Department of Tourism specifically signs off on foreign-tourist drone use | tourism.gov.np (Dept. of Tourism) | Medium-High |
+| **Department of National Parks and Wildlife Conservation (DNPWC)** | Approval authority for drone flights inside national parks and conservation areas (confirmed directly for Sagarmatha) | dnpwc.gov.np | High |
+| **District Administration Offices (DAOs) / Chief District Officers (CDOs)** | Local-level flight-permit issuance for lower-category/lower-altitude operations; local security coordination | Office-specific, no single central portal located | Medium-High |
+| **Nepal Police** | Local-level security review/courtesy clearance for public-area recreational flights; enforcement (seizure) | nepalpolice.gov.np | Medium |
+| **Nepal Army** | Security clearance/oversight for flights near military areas; supervisory role (liaison officer) for special disaster-response drone authorizations | nepalarmy.mil.np | Medium |
+| **Department of Customs** | Import clearance, duty/VAT assessment, customs clearance certificate issuance (a prerequisite document for CAAN registration of an imported drone) | customs.gov.np | Medium-High |
+| **Ministry of Communication and Information Technology (successor to the old Ministry of Information and Communication)** | Reported frequency/spectrum clearance for higher-bandwidth drone control links | doc.gov.np / mocit.gov.np (successor naming not fully confirmed) | Low-Medium |
+| **Sagarmatha National Park Office** | Site-specific drone-procedure administration for the Everest region; publishes its own steps and requirements directly on its website | snp.gov.np | High |
+| **Annapurna Conservation Area Project (ACAP) / National Trust for Nature Conservation (NTNC)** | Site-specific drone-procedure administration for the Annapurna region | ntnc.org.np | Medium |
+
+
+
+

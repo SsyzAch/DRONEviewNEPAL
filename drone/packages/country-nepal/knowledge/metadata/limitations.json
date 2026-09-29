@@ -1,0 +1,14 @@
+[
+  {
+    "id": "LIMIT-NEP-001",
+    "description": "Temporary VIP movements and military NOTAM airspace changes are not dynamically synced from local live CAA feeds.",
+    "impact": "High",
+    "manualVerificationRecommended": true
+  },
+  {
+    "id": "LIMIT-NEP-002",
+    "description": "Precise boundary polygons for local police stations and correctional institutions are not gazetted; point buffers of 1 km are applied in Kathmandu.",
+    "impact": "Medium",
+    "manualVerificationRecommended": true
+  }
+]

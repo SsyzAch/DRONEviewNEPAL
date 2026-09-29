@@ -1,0 +1,58 @@
+[
+  {
+    "id": "auth-nep-caan-001",
+    "name": "Civil Aviation Authority of Nepal (CAAN)",
+    "level": "Federal",
+    "role": "Primary technical regulator for civil aviation safety, registration, licensing, and flight authorizations.",
+    "website": "https://caanepal.gov.np"
+  },
+  {
+    "id": "auth-nep-moha-001",
+    "name": "Ministry of Home Affairs (MoHA)",
+    "level": "Federal",
+    "role": "National security screening, border restriction policies, and central UAV Working Procedure operations.",
+    "website": "https://moha.gov.np"
+  },
+  {
+    "id": "auth-nep-dnpwc-001",
+    "name": "Department of National Parks and Wildlife Conservation (DNPWC)",
+    "level": "Federal",
+    "role": "Issuance of flight approvals inside national parks and wild protected habitats.",
+    "website": "https://dnpwc.gov.np"
+  },
+  {
+    "id": "auth-nep-doa-001",
+    "name": "Department of Archaeology (DoA)",
+    "level": "Federal",
+    "role": "Clearance for aerial photography or operations near registered cultural monuments and UNESCO heritage landmarks.",
+    "website": "http://doa.gov.np"
+  },
+  {
+    "id": "auth-nep-dao-001",
+    "name": "District Administration Office (DAO)",
+    "level": "Provincial",
+    "role": "Local security review and flight authorization coordination for operations up to 200 ft AGL.",
+    "website": "https://moha.gov.np"
+  },
+  {
+    "id": "auth-nep-police-001",
+    "name": "Nepal Police",
+    "level": "Local",
+    "role": "Enforcement of restricted airspace, drone seizure, and public compliance monitoring.",
+    "website": "https://nepalpolice.gov.np"
+  },
+  {
+    "id": "auth-nep-army-001",
+    "name": "Nepal Army",
+    "level": "Federal",
+    "role": "Military airspace management, border surveillance, and liaison support during emergency disaster response authorizations.",
+    "website": "https://nepalarmy.mil.np"
+  },
+  {
+    "id": "auth-nep-customs-001",
+    "name": "Department of Customs",
+    "level": "Customs",
+    "role": "Import inspections, tariff duty collection, and issuance of customs clearance declarations for registration.",
+    "website": "https://customs.gov.np"
+  }
+]

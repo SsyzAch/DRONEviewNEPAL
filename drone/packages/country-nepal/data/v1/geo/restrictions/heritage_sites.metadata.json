@@ -1,0 +1,10 @@
+{
+  "layerName": "heritage_sites",
+  "source": "UNESCO World Heritage Centre and Department of Archaeology (DoA) boundary charts",
+  "downloadDate": "2026-06-30",
+  "checksum": "sha256-heritage-checksum-v1",
+  "version": "1.0.0",
+  "license": "UNESCO Open Data / Government Archaeological Gazettes",
+  "maintainer": "Department of Archaeology, Kathmandu",
+  "updateFrequency": "yearly"
+}

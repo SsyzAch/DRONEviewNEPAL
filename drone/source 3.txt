@@ -1,0 +1,205 @@
+Drone Laws and Regulations in Nepal
+Civilian drone operations in Nepal are governed primarily by regulations issued by the Civil Aviation Authority of Nepal (CAAN) under Nepal’s Civil Aviation Act and Civil Aviation Regulations. The key regulation is the Civil Aviation Authority of Nepal – Unmanned Aircraft System (UAS) Requirements (Issue 01, dated December 2020). This CAAN directive – issued pursuant to Rule 82 of the Civil Aviation Regulations (2058 B.S., 2002) – establishes comprehensive rules for registration, pilot certification, operational categories, and safety standards for all unmanned aircraft systems (UAS) in Nepal. It explicitly supersedes earlier CAAN Drone Directive No. 07 (May 2015) and aligns with ICAO guidance and Nepal’s Ministry of Home Affairs drone procedures. All civilian drones (excluding military or diplomatic aircraft) must comply with the UAS Requirements, which became fully effective by 30 June 2021.
+
+In addition to CAAN, Nepal’s Ministry of Home Affairs (MoHA) promulgated the Drone-Related Procedure, 2019 (2075 BS) for security and coordination of drone flights. Pilots are required to submit a “purpose and commitment” letter affirming they will operate under both CAAN rules and the MoHA working procedure. Local police and army authorities also enforce no-fly zones (especially near sensitive installations and borders), though formal public regulations by these agencies are limited. Film and photography permits are overseen by the Ministry of Information and Communications and the Department of Archaeology (see below). In practice, CAAN issues flight permissions based on the above regulations, often requiring clearances from MoHA, local police, national park authorities, or heritage agencies as applicable.
+
+1. Legal Framework
+Civil Aviation Authority of Nepal – UAS Requirements (Issue 01, Dec 2020). Issued by CAAN, effective mid-2021. Establishes Nepal’s drone law: mandates registration of all drones, defines weight categories, pilot licensing, standard operating conditions (VLOS, max altitude, etc.), and safety rules. (This supersedes CAAN Directive 07.) Summary: Requires every operator to register and display a CAAN-issued UIN, abide by CAAN operating rules, and obtain any required flight authorization. Applicability: All civilian UAS (<25 kg) and their pilots. Implications: No drone can fly legally in Nepal unless registered; pilots must be certified as defined (Part 102), and flights must meet CAAN’s “open category” standards (see Flight Rules).
+
+CAAN Flight Operations Directive No. 07 (May 2015). An earlier CAAN safety directive governing drones and sports aircraft, now superseded by the UAS Requirements. Directive 07 imposed flight restrictions (e.g. minimum distances from runways, requiring CAAN permission for all aerial work) and contained a limited exemption: “Remotely controlled aerial toys (drones) under 2 kg do not require CAAN permission if flown within the owner’s private property below 400 ft AGL”. (This specific exemption is effectively overridden by the 2020 UAS Requirements, which require registration for any operation.)
+
+Civil Aviation Act, 2053 BS (1996 AD) and Civil Aviation Regulations, 2058 BS (2002 AD). The Civil Aviation Act establishes CAAN’s authority. The 2002 Regulations (amended to present) provide the legal basis for drone rules (Rule 82 empowers CAAN to issue UAS operating standards). Summary: These are the statutory framework under which CAAN’s UAS Requirements have force. Implications: They mean that CAAN’s rules carry the force of regulation; violations can be prosecuted under Nepal’s aviation laws (see Enforcement).
+
+Ministry of Home Affairs – Drone-Related Procedure, 2019 (2075 BS). Issued by MoHA under its security mandate, dated around 2019. (Official Nepali title: Drone सम्बन्धी कार्यविधि, २०७५). It defines categories and risk levels, and requires drone pilots to coordinate with local authorities for security clearance. Summary: Classifies drones into Categories A–D (very low to high risk) largely by weight and operation, and mandates liaison with MoHA before flights. Implications: Pilots must declare purpose and operate per both CAAN and MoHA rules. (MoHA Procedure has force of government rule but must be read alongside CAAN’s UASR.)
+
+Nepal Film and Photography Regulations. While not drone-specific, Nepal imposes strict controls on aerial filming of protected sites. Foreign media must obtain a filming permit from the Ministry of Information & Communications (MoIC), usually via a licensed local company. Any filming (including by drone) in a World Heritage Zone, national park, or sensitive site requires approval from the Department of Archaeology or other authorities. For example, shooting at the Kathmandu Valley heritage monuments, Lumbini, Chitwan NP or Sagarmatha NP requires government permits. Implication: Drone photography of temples, heritage sites or park areas is effectively prohibited without special permit.
+
+Customs and Import Regulations. Drones are subject to Nepal Customs rules. All imported UAS must clear customs and pay VAT (13%). CAAN registration requires a customs clearance certificate for imported drones. (There is no known blanket ban on specific models, but some older posts indicate temporary import controls in early 2022.) Implication: Foreign visitors must declare drones at entry; commercial importers file standard customs declarations.
+
+Other Laws. Nepal’s Constitution guarantees the right to privacy (Art. 28), and Nepal’s criminal laws penalize unauthorized photography of individuals. While no drone-specific privacy law exists, pilots must avoid infringing private property or personal privacy (by flying over private homes without consent) under general legal principles. Environmental laws (National Parks and Wildlife Conservation Act) can apply: drones disturbing wildlife may violate park rules. Implication: Pilots must exercise due care – unauthorized surveillance or filming can trigger civil or criminal liability under Nepal’s existing laws.
+
+2. Drone Classification
+Nepal’s UAS rules adopt a weight-based classification into four categories (mirroring ICAO/FAA schemes):
+
+Category A – “Very Low Risk”: MTOW less than 250 grams. These nano-drones are intended for hobby/recreational use. Flight limitations: must still comply with all standard rules (VLOS, <100 m altitude, etc.). Permit: Technically they must be registered if flown (CAAN has stated all operated UAS require registration), but given their minimal risk they are often treated leniently.
+
+Category B – “Low Risk”: MTOW 250 g to 2 kg. These small drones require CAAN registration and any operation beyond trivial hobby flights requires a flight permit. Uses: advanced hobby, aerial photography. Pilots of Category B drones must abide by UAS Requirements (see Flight Rules).
+
+Category C – “Regulated Low Risk”: MTOW 2 kg to 25 kg. Mid-size drones used for commercial, research or heavy aerial work fall here. These require full CAAN registration, an approved pilot license (Remote Pilot Licence under CAAN Part 102), insurance, and an official flight authorization for each mission. (Drones up to 25 kg are permitted under “open category” rules, provided operating conditions are met.)
+
+Category D – “Regulated High Risk”: MTOW above 25 kg. Large drones (e.g. professional cinematography, heavy-lift, military) fall in this class. In Nepal, no civilian operations above 25 kg are allowed; CAAN explicitly forbids operating a UA over 25 kg. (Such heavy drones would require special government/airworthiness authorization, which effectively means they are banned for civilians.)
+
+For each category, CAAN defines required documentation for registration (CAAN UASR Appendix I) and for flight permits. In general, any UAS flying in Nepal – even Category A–C – must be registered and display its CAAN-issued Unique Identification Number (UIN). (Registration documents include the owner’s ID, drone serial, manual/specs, purchase invoice or customs form, pilot info, etc..)
+
+3. Registration Requirements
+Under CAAN’s UAS Requirements, every drone must be registered before flight. Specifically, “every person… who will operate a [drone] in Nepal shall register that UA and hold a valid certificate of registration”. Foreign-registered drones may be accepted if covered by a reciprocal agreement. In practice, this means all drones intended for use in Nepal (except possibly Category A toy drones flown entirely on private property – see below) require CAAN registration.
+
+The registration process (Form RPA/Form/01 in CAAN Appendix I) requires the owner/operator to submit: personal ID (passport or citizenship cert), contact info, a photo of the pilot, and full drone details (manufacturer, model, serial number, MTOW, payload, color). Applicants must also provide the drone’s operations manual and specifications, a recent photo of the drone showing serial number, and proof of acquisition: either a Nepali VAT receipt (if bought locally) or a Customs clearance certificate (if imported). The intended purpose of flight must be declared. Upon approval, CAAN issues a Drone Certificate of Registration with a Unique Identification Number (UIN); the UIN must then be painted or affixed on the drone in block letters visible at all times.
+
+Fees and Timelines: CAAN’s registration form itself does not list fees, but CAAN has communicated (via industry sources) that registration involves a processing fee (roughly USD 10 for Nepali nationals; about USD 50+VAT for foreigners) and is valid as long as the drone is in Nepal and under the same owner. The certificate is typically issued within weeks. There is no annual renewal requirement noted in the UASR; updates occur if ownership changes or modifications are made.
+
+Exemptions: Historically, CAAN’s 2015 Directive allowed very small drones (<2 kg) on private property below 400 ft without CAAN permission. However, the 2020 UASR requires registration of all UAVs to be operated in Nepal and does not preserve any blanket exemption. In theory, a nano drone (<250 g) flown indoors or on private land might avoid scrutiny, but CAAN’s position is that any operation outside one’s own property and the open category conditions requires authorization.
+
+4. Permit System (Flight Authorizations)
+All drone flights beyond trivial hobby use require CAAN permission in the form of a flight permit (often called a Flight Operation Number or “FPN”). CAAN’s Procedure Manual for Flight Permission (issued under Rule 82) specifies how to apply. In brief, the operator must submit a written application to CAAN’s Flight Safety Standards Department at least 7 working days before the planned flight. The application must state the purpose of the flight, dates, locations, equipment (drone specs and pilot name) and attach necessary documents. These documents typically include: the CAAN Drone Registration certificate, map of the proposed flight area, written clearance/consent from landowners or local authorities if flying over private or public property, and security clearances as needed. The Procedure Manual’s Appendix H lists the required attachments for any drone operation (see below).
+
+Different types of operations may involve additional approvals:
+
+Recreational Flights: For private hobby flying (non-commercial) in rural or open areas, operators still must register and obtain a CAAN permit if required (especially if flying outside a private yard or over 250 g). In practice, small drones flown well away from people and airports may be able to fly with minimal oversight, but legal practice is to file the same application. (The pre-2020 exemption for sub-2 kg toy drones in private spaces has no official successor.)
+
+Commercial Use (Photography, Filming, Survey, etc.): Any profit-making operation (filming, mapping, inspection, agriculture spraying, etc.) requires a CAAN Flight Permit. In addition, the operator usually must obtain a “no-objection” letter from the Ministry of Home Affairs (security clearance) and, if relevant, from the Ministry of Tourism or other agencies. For aerial cinematography, CAAN may also require that the operator hold liability insurance. The CAAN procedure lists “purpose of operation” and “security clearance” as mandatory attachments. Foreign companies must also partner with a Nepali sponsor or local firm to submit permits (Nepal law forbids foreigners from self-filing government paperwork).
+
+Surveying/Mapping/Research: These non-commercial academic/engineering flights require the same CAAN permit as commercial flights. Pilots must declare the precise purpose (“survey”, “research study”) on the application, and may need approval from the related government department (e.g. Department of Survey for mapping).
+
+NGOs/Government Operations: Government and NGO drones (e.g. for rescue, infrastructure inspection) are regulated identically. An official request letter on organization letterhead is submitted to CAAN, with supporting documents and any inter-agency clearances. In emergencies, CAAN can fast-track approval, but normally 7-day notice is expected.
+
+Foreign Operators/Tourists: Tourists may bring drones but must register them with CAAN (see Registration) and then obtain a CAAN flight permit for each planned use. In practice, permission is also needed from Nepal’s Ministry of Home Affairs and/or Tourism (for example, a traveler often obtains a “permission to fly” via the Department of Immigration). All foreign pilots must abide by CAAN regulations and usually must fly with an accredited local agent or liaison. (The UASR requires that any operator in Nepal hold a valid Nepalese remote pilot license or operate under CAAN supervision.)
+
+Special Permits: The Ministry of Tourism and Civil Aviation (now part of MoCTCA) issues dedicated permits for events or unusual flights (e.g. movie shoots). There is no separate public “drone permit” beyond the above process; rather, CAAN’s flight permit serves as the official authorization. Appeals of permit denials would go through the CAAN Director General.
+
+5. Flight Rules and Operational Restrictions
+CAAN’s UAS Requirements lay out strict operating rules. All drone flights must comply with standard operating conditions:
+
+Visual Line of Sight (VLOS): The remote pilot or a qualified observer must maintain VLOS of the drone at all times. No BVLOS (beyond-visual-line-of-sight) operations are permitted without special CAAN authorization (which in practice is rarely granted to non-government users).
+
+Maximum Altitude: 100 meters (328 ft) above ground level. (Flying higher requires express CAAN approval and possibly ADS-B or other tracking equipment.)
+
+Minimum Distances: Drones must remain at least 30 m horizontally from any person not directly involved in the operation. (This means no flying over crowds, public gatherings, highways, or populated areas unless the people have consented to be overflown. Consent can reduce the limit to 15 m, but is rarely practical.) In general, flying over uninvolved individuals or assemblies is prohibited.
+
+Daylight and Weather: Daylight VMC only – no operations at night and no flight in cloud or poor visibility. The pilot must ensure weather conditions are adequate (i.e. wind, rain, fog minimal) and stop the flight if conditions worsen.
+
+Airspace and Location Limits: Drones must never enter prohibited or restricted airspace as defined by NOTAM or law. By CAAN regulation, no drone may fly within 5 km of the movement area of any airport/heliport. (This includes all domestic and international airports in Nepal.) Operations in a “populated area” – i.e. urban center or town – require special approval. As a rule, flying in built-up areas, over roads, public events, stadiums or critical infrastructure is effectively banned unless exempted by authorities.
+
+Airport and Aerodrome Distances: In addition to the 5 km rule from any runway, CAAN and airport authorities often impose zones around approach paths where drones are forbidden (varying by airport). In Kathmandu and other city airports, local enforcement treats the entire city as a no-fly zone for drones.
+
+National Parks and Protected Areas: Any drone operation in a National Park or Conservation Area requires prior permit from the Department of National Parks and Wildlife Conservation. (By law, drones are effectively banned in parks like Sagarmatha, Chitwan, Langtang etc. unless a research or media permit is granted.)
+
+Heritage and Religious Sites: Drone flights over UNESCO World Heritage Sites and holy monuments (e.g. Kathmandu Durbar Squares, Boudhanath Stupa, Pashupatinath, Lumbini, Changu Narayan, etc.) are forbidden without special government permit. In practice, filming in these areas requires approval from the Department of Archaeology or site authorities. Casual drone photography of temples is not allowed; doing so risks confiscation and prosecution.
+
+Emergency Areas: Drones must avoid areas where emergency response (fire, police, medical evacuation) is ongoing, unless granted explicit permission by on-scene commanders. This prevents interference with rescue helicopters and first responders.
+
+Over People and Moving Vehicles: As noted, flights over people are highly restricted. The UASR allows a person to fly a drone if standing behind a fixed-wing during takeoff, but generally all multicopter flights must maintain the 30 m buffer. Flying over moving cars or traffic is likewise unsafe and unpermitted unless the driver is a participant.
+
+Dropping Objects: Carrying and releasing cargo or payloads from a drone is banned if it endangers people or property. This prohibits package delivery or aerial dispensing operations unless specially authorized (none are currently permitted for civilians).
+
+Right-of-Way: Drones must yield right-of-way to all manned aircraft. Pilots must immediately land or move aside if a manned aircraft is nearby.
+
+Equipment and Maintenance: While not explicitly stated, standard aviation principles apply – drones must be maintained in airworthy condition, and all safety critical components must meet manufacturer standards. Pilots should carry spare batteries and ensure fail-safes (return-to-home, geofencing) are enabled.
+
+In summary, Nepal’s flight rules align with strict “open category” UAV practices: no flights at night or beyond line-of-sight; keep under 100 m; avoid people, buildings and traffic; and stay out of any controlled or sensitive airspace. Violations of these basic rules can result in severe penalties (below).
+
+6. Restricted Airspace and No-Fly Zones
+Nepal designates several areas where drone flights are either forbidden or heavily restricted. Key examples include:
+
+Airports and Aerodromes: All civil and military airports in Nepal enforce a minimum 5 km no-drone radius around runways. This includes (but is not limited to): Tribhuvan International (Kathmandu), Gautam Buddha International (Bharatpur), Pokhara International, Biratnagar, Nepalgunj, Birendra (Chitwan), Simara, Dhangadhi, Janakpur, Ramechhap, and Lukla. Coordinates and restrictions are:
+
+Location	Coordinates (Lat, Lon)	Restriction	Notes
+Tribhuvan Intl Airport (KTM)	27.6966, 85.3593	No-fly within 5 km (airport)	Major international airport (Kathmandu).
+Pokhara Intl Airport	28.2080, 83.9826	No-fly within 5 km (airport)	New international airport (Pokhara).
+Gautam Buddha Intl (Bharatpur)	27.6806, 84.4250	No-fly within 5 km (airport)	Under construction/operational.
+Biratnagar Airport	26.4526, 87.2718	No-fly within 5 km (airport)	Domestic airport (eastern Nepal).
+Nepalgunj Airport	28.9924, 81.6130	No-fly within 5 km (airport)	Domestic (far-western).
+Simara Airport	27.1576, 85.3289	No-fly within 5 km (airport)	Domestic (Bara District).
+Dhangadhi Airport	28.7073, 80.6473	No-fly within 5 km (airport)	Domestic (far-western).
+Janakpur Airport	26.7180, 85.9225	No-fly within 5 km (airport)	Domestic (Madhesh Province).
+Ramechhap Airport	27.2105, 86.1186	No-fly within 5 km (airport)	Domestic (used for Kathmandu’s mountain flights).
+Lukla Airport (Tenzing–Hillary)	27.6869, 86.7294	No-fly within 5 km (airport)	Domestic; gateway to Everest region.
+
+Legal source: CAAN UASR 101.7(c)(5). Applicable drones: All (no exceptions). Permits: None can override this without special (military) clearance.
+
+National Parks / Conservation Areas: All protected areas require advance permission from the Department of National Parks and Wildlife Conservation (DNPWC). Notable examples: Sagarmatha National Park (Everest region), Chitwan NP, Annapurna Conservation Area, Langtang NP, Rara NP, Bardia NP, Shivapuri NP, etc. Coordinates: e.g., Sagarmatha NP center ~27.8369N,86.9290E; Chitwan NP ~27.5333N,84.3542E. Restriction: No drone flights without park permit (effectively no casual drone use). Reason: To protect wildlife and visitors; drones can disturb animals. Authority: DNPWC. Permits: Scientific or filming permits (very rare and expensive). (For instance, Nepal’s film regulations explicitly list Sagarmatha and Chitwan as requiring Dept. of Archaeology approval.)
+
+UNESCO World Heritage Sites and Cultural Monuments: Flying drones over any Kathmandu Valley heritage site or Lumbini or other world heritage area is effectively banned without special license. Example sites: Kathmandu Durbar Square (27.7047N,85.3220E), Swayambhunath and Boudhanath Stupas, Pashupatinath Temple (27.7102N,85.3440E), Patan and Bhaktapur Durbar Squares, Changu Narayan Temple (27.7193N,85.4236E), Lumbini (27.6792N,83.5070E). Restriction: The Film Permit rules require approval from the Dept. of Archaeology or relevant fund for any filming (and by extension drone use) in these zones. Permits: Extremely difficult; usually granted only for major documentary/film projects via MoIC.
+
+Military and Government Areas: Security zones around army bases, police HQs, government compounds (e.g. Singha Durbar/Government Secretariat, military barracks, border posts) are not publicly charted, but drone flights are effectively forbidden. For example, the Nepal Army Headquarters (Bhadrakali, Kathmandu) and the Nepal Police HQ (Naxal, Kathmandu) are heavily protected. Restriction: Such zones would be classified as “prohibited/restricted” airspace by security agencies. Reason: National security. Permits: Only state agencies. (While no public map exists, pilots are advised to treat all military installations and borders as no-fly.)
+
+Other Critical Infrastructure: Key facilities – e.g. power plants, major hydroelectric dams, telecommunications towers, airports (beyond runways), foreign embassies in Kathmandu – are sensitive. While no formal radius is published, unauthorized drone overflight of these is strongly discouraged. Authority: Various (Nepal Electricity Authority, telecom regulator, Ministry of Home Affairs). Permits: None publicly available; these are de facto prohibited areas.
+
+Temporary No-Fly Zones: Government may issue temporary flight restrictions by NOTAM for special events or emergencies (e.g. political rallies, VVIP movements, disaster relief). Pilots must check NOTAMs issued by CAAN’s AIS department before flight.
+
+In summary, drones are banned (or tightly controlled) in and around airports, protected parks, heritage sites, government/military areas, and emergencies. CAAN’s regulations explicitly codify airports and emergency zones; film regulations impose permits for heritage and parks. Pilots must consult official sources (CAAN NOTAMs, local authorities) before any flight.
+
+7. Drone Import and Customs Regulations
+Nepal treats drones like any other controlled item at import. Key points:
+
+Customs Declaration: All drones (and high-value drone gear) brought into Nepal must be declared at Customs upon arrival. Importers present the drone details and pay applicable customs duties and 13% VAT. CAAN registration requires a Customs clearance certificate for any drone that was imported.
+Taxes: New drones imported for sale are subject to Customs duty (varies by tariff code) plus VAT (13%). Used or tourist imports may be assessed VAT only. (Some travelers report a refundable customs deposit for professional gear, though no official fee schedule is published.)
+Prohibited Items: There is no public ban on particular drone brands or frequencies. All drones over 25 kg are effectively forbidden to import (as they cannot be registered).
+Temporary Import for Foreigners: Tourists may bring drones temporarily under a baggage declaration. Technically they should obtain a “Customs clearance” by declaring the drone (similar to cameras). On departure, no formal de-embarkation permit is required unless the drone was permanently imported.
+No special export controls exist beyond normal export licensing. In practice, selling drones abroad follows standard export procedures.
+
+8. Foreign Operators
+Foreigners (tourists, researchers, NGOs, media crews) must strictly follow the same rules: register the drone with CAAN (or have a partner do it) and obtain flight authorizations. In addition:
+
+Tourists: As a visitor, you must declare your drone at immigration/customs and get a CAAN UIN. For any flight, you need a CAAN permit and typically a No Objection from the Department of Immigration or Home Ministry. Without these, flying a drone can lead to fines, confiscation or even deportation.
+Foreign Media/Film: Must apply for a professional filming permit through a Nepali liaison (Ministry of Information & Communications). This process includes CAAN registration and additional clearances (Dept. of Archaeology, etc. as noted).
+Foreign Companies/Researchers: The process is the same as for Nepali entities, but applications must be sponsored by a Nepali company or authority (Nepal law forbids foreign entities from applying on their own). All foreign pilots must still meet CAAN’s age and licensing requirements (or operate under a Nepali pilot’s supervision).
+In short, any foreign-operated drone flight is subject to Nepali law. There are no special exemptions for tourists. Violations have led to arrests in the past (including high-profile cases of film crews flying without permission).
+
+9. Enforcement, Penalties and Conflicts
+Nepal enforces its drone rules via CAAN inspectors, Customs officers, and security forces. Penalties for violations are severe. Sources indicate that unauthorized drone flights may result in:
+
+Fines: Reported fines range from NPR 5,000 to NPR 50,000 or more (roughly USD 40–400) for minor infringements.
+Equipment Confiscation: The drone is routinely confiscated by police or airport authorities. Given Nepal’s bureaucracy, return of seized drones is rare.
+Criminal Action: Flying near airports or military zones can lead to prosecution under the Civil Aviation Act or criminal codes. Foreign offenders risk deportation and blacklisting. (One guide warns that filmmakers without permits have been jailed or fined.)
+Official citations of penalties are scant, but Nepal’s Aircraft Act authorizes substantial fines and imprisonment for unauthorized flights over protected areas or safety zones. In practice, CAAN has banned individuals and companies from future drone operations if caught in violation.
+
+Conflicting or Ambiguous Regulations: A few grey areas exist. For example, the old Directive 07 exemption for sub-2 kg drones on private land conflicts with the UASR’s blanket registration rule. In practice, CAAN requires registering even micro-drones before operation. Similarly, local police in heritage zones may enforce “no photography” rules that overlap with CAAN’s no-fly policy; pilots must obey both. In such cases, the stricter rule prevails. Operators are advised to interpret any uncertainty in favor of more permission rather than less – when in doubt, apply for a CAAN permit and get local NOCs.
+
+10. Government Agencies
+Civil Aviation Authority of Nepal (CAAN): Primary regulator. Issues drone regulations, registrations, and flight permits. Headquartered in Kathmandu (Madan Bhandari Road, Sinamangal). Director General’s office oversees UAS matters. Contact: www.caanepal.gov.np; email (Flight Safety Standards): dgca@caanepal.gov.np; phone +977-1-5718000 (CAAN main line).
+Ministry of Home Affairs (MoHA): Security clearances and drone policy via its Department of Immigration and the Home Ministry Secretariat. Oversees the “Drone Procedure 2019”. No public portal, but queries go to the Department of Immigration or Provincial Home Offices.
+Ministry of Information & Communications (MoIC): Grants media/film permits. Contact at Singha Durbar, Kathmandu; web: mocit.gov.np.
+Department of National Parks and Wildlife Conservation (DNPWC): Regulates drones in parks. Permits through DNPWC headquarters or regional offices. Website: www.dnpwc.gov.np.
+Department of Archaeology (DoA): Controls filming in heritage sites. Permit office in Kathmandu; website: www.doa.gov.np. Pashupatinath Development Fund (t.i.c. charity) issues temple-specific permission.
+Nepal Customs Department: Enforces import rules at airport and border checkpoints. Liaison offices at TIA. For drone queries: www.customs.gov.np.
+Nepal Police / Armed Police Force: Enforce local no-fly zones (e.g. near government premises, during events). Can issue orders to CAAN or seizing drones on security grounds.
+Nepal Army: Enforces security zones especially along international borders (India/China). Army Anti-Aircraft units can deter unauthorized drones near cantonments.
+11. Historical Timeline
+2015 (May): CAAN issues Flight Operations Directive No. 07 for UAS, establishing basic rules and a limited exemption for sub-2 kg hobby drones.
+2019 (December): Ministry of Home Affairs publishes the Drone-Related Procedure, 2075 BS, standardizing security clearance and classifying drones by risk (Categories A–D).
+2020 (Dec): CAAN issues UAS Requirements (Issue 01), replacing Dir.07. This marks Nepal’s first comprehensive drone regulation.
+2021 (June): Formal implementation date for UAS Requirements; all civilian drones must be registered by this time. A brief government order in early 2021 restricted imports of certain drones, but this ban was lifted after a few days (according to press reports).
+2022–2025: No major new laws have been published. CAAN continues to refine guidance internally. New airports (Pokhara, Gautam Buddha) came online (2022–23) with strict no-drone zones by default. The COVID-19 pandemic saw heightened enforcement of the rules (no unofficial flights allowed).
+12. International Comparison
+India: Like Nepal, India requires all drones to be registered (except sub-250 g which are exempt) and mandates permits for many operations (India’s Digital Sky platform). India’s altitude limit is 120 m (vs Nepal’s 100 m) and line-of-sight requirement is similar. Both countries require pilot tests for larger drones. However, India’s regulations (Drone Rules 2021) are more liberal for hobbyists, while Nepal’s remain stricter and enforcement is less uniform. Nepal also requires “security clearance” for foreign users (India does not).
+
+Bhutan: Bhutan currently bans most civilian drones outright; only very limited government/UAVSVIP usage is permitted under strict controls. Nepal’s stance is far more permissive (allowing tourism and commercial use under permit) but still highly regulated.
+
+China: China requires domestic certification and registration, and has extensive geofencing. Foreign drone use is effectively prohibited without a Chinese domestic license. Nepal’s regime is similar in seriousness of oversight, though with less domestic drone industry.
+
+United States: The US (FAA Part 107) allows more autonomous operations (up to 400 ft, beyond-VLOS with waivers, etc.) than Nepal. Nepal’s VLOS and altitude limits (100 m) are comparable to FAA’s 400 ft. Unlike the FAA, CAAN imposes a strict 5 km no-fly zone around any airport and requires state security clearance – measures the US does not have for civilian drones.
+
+European Union (EASA): Europe uses a category framework akin to Nepal’s (Open/Specific/Certified categories). EU Open Category limits (120 m altitude, <500 m distance) are a bit more lenient than Nepal’s (100 m, 300 m). EU law allows sub-250 g drones essentially free use; Nepal requires even nano drones to register. Both EU and Nepal ban flights over crowds without special permission.
+
+United Kingdom: The UK (CAA) has altitude 400 ft/120 m and requires permission for professional flights (PfCO). Privacy rules (GDPR) also constrain drone imaging. Like Nepal, the UK treats airports and public safety as high-priority no-fly zones. Differences: the UK permits some autonomous operations (under PDRA) and has clearer flight activity zone maps published.
+
+In summary, Nepal’s drone rules are tighter than those of India or most Western countries, and most closely resemble Bhutan’s and China’s in terms of requiring explicit state permission for almost all operations. However, unlike Bhutan, Nepal does allow civilian drone use (tourism, film, mapping) provided the bureaucratic hurdles are met.
+
+13. FAQs (Practitioner Questions)
+Can tourists fly drones? Yes, but only with full permits. Tourists must register their drone with CAAN and obtain a flight permit for any intended use. In practice, they also need clearance from Nepal’s Home Ministry or Immigration and often a local sponsor. Unpermitted flying by foreigners has led to fines and confiscation.
+
+Can drones fly in Kathmandu? Generally, no. Kathmandu lies under the control zone of Tribhuvan International Airport. CAAN’s rule forbids drone flights within 5 km of any airport, and Kathmandu is densely populated. Flying in Kathmandu requires special authorization (effectively none is given).
+
+Can drones fly inside National Parks? Only with permission. Parks like Sagarmatha, Chitwan, etc. technically require permits from the park authority. Such permits are rarely granted to tourists or hobbyists. Recreational flights inside park boundaries are effectively banned.
+
+Can drones photograph temples? Not without permits. Nepal’s heritage laws require filming permits for all major temples and monuments. A tourist drone pilot has no legal right to film a temple; doing so can lead to immediate confiscation.
+
+Can drones cross borders? No. Border areas are sensitive military zones. CAAN prohibits flying near “prohibited areas” (which include borders). Any drone approaching Nepal’s international boundary will be intercepted by security forces.
+
+Can drones fly near Mount Everest? Only with park approval. Everest lies in Sagarmatha National Park – no drone flights are allowed there without a special research/media permit (which is very hard to obtain). Unauthorized Everest-region flights have been shut down.
+
+Can I import a drone without permits? No. When bringing a drone into Nepal (even for personal use), you must declare it to Customs and obtain a customs clearance certificate. Failure to do so can lead to seizure at the airport. Upon arrival, register the drone with CAAN as described above before flying.
+
+Can drones be used commercially? Yes, with authorization. Commercial operations (film, surveying, delivery) are allowed only if the operator has registered the drone, the pilot is licensed, and CAAN has issued a flight authorization for the specific project. All commercial payloads (cameras, sensors) must be declared, and liability insurance is effectively mandatory for large drones.
+
+14. Official Sources and Documents
+Primary legal texts and sources: We draw on CAAN publications (UAS Requirements PDF, Flight Operations Directive No.7, CAAN Procedure Manual), the MoHA Drone Procedure (Nepali text), and Nepal government websites (MoHA announcement). Where official Nepali documents were in the local language, we have used reliable translations and supporting explanations (e.g. the CAAN UASR is bilingual). In addition, publicly available guidance from Nepal tourism and legal resources (e.g. policy blogs) have been cited to illuminate real-world enforcement and permit practice.
+
+Data sources: Restricted zone coordinates above are from official airport data and UNESCO maps. Recommended GIS datasets for a drone flight planner include: Nepal administrative boundaries (NAC, Survey Dept or UN OCHA), locations of all public airports/heliports (Civil Aviation Info Publication), Nepal national parks (DNPWC GIS), UNESCO heritage sites (World Heritage Centre), and a GIS of CAAN no-fly zones (if published). Elevation (SRTM/ASTER) and population density (WorldPop) can assist risk analysis. Wherever possible, these should be obtained from official sources (Survey Department, CAAN, DNPWC websites) or authoritative international datasets.
+
+Conflicts & Ambiguities: Some tensions remain. Notably, CAAN’s 2020 rules leave open how to treat the old “private property” exemption – pilots should assume minimal exemptions (i.e. register and permit all drones they plan to fly). Likewise, CAAN’s regulations do not specify hours of operation or broadcast frequencies (these default to national telecom rules). Where guidance is silent, operators must err on the side of safety and compliance (for example, avoiding all night flights). In conflicts between agencies (e.g. CAAN vs. local police at a film shoot), higher authorities (MoHA, courts) would likely uphold the stricter standard.
+
+Summary: Nepal’s drone laws are elaborate and strictly enforced. Civilian pilots must navigate CAAN’s UAS Regulations, secure registrations and permits, and respect a wide array of restricted zones (airports, parks, monuments). While recreational hobby flying is possible in remote areas, professional use requires substantial paperwork. This report collates the latest official rules (as of 2026) with practical guidance to ensure compliance.
+
+Sources: Official CAAN documents and Nepal government publications have been used wherever possible (cited above). Additional credible analyses and travel guides have been consulted for practical interpretations

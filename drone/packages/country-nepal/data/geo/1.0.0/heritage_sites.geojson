@@ -1,0 +1,137 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "layer": "heritage_sites",
+    "version": "1.0.0"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "heritage_sites-1",
+        "name": "Kathmandu Durbar Square",
+        "category": "heritage_sites",
+        "bufferMeters": 1000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3069,
+          27.7042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "heritage_sites-2",
+        "name": "Patan Durbar Square",
+        "category": "heritage_sites",
+        "bufferMeters": 1000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3253,
+          27.6736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "heritage_sites-3",
+        "name": "Bhaktapur Durbar Square",
+        "category": "heritage_sites",
+        "bufferMeters": 1000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.4283,
+          27.6722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "heritage_sites-4",
+        "name": "Swayambhunath Stupa",
+        "category": "heritage_sites",
+        "bufferMeters": 1000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.2894,
+          27.7147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "heritage_sites-5",
+        "name": "Boudhanath Stupa",
+        "category": "heritage_sites",
+        "bufferMeters": 1000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3619,
+          27.7214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "heritage_sites-6",
+        "name": "Pashupatinath Temple",
+        "category": "heritage_sites",
+        "bufferMeters": 1000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3486,
+          27.7106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "heritage_sites-7",
+        "name": "Changu Narayan Temple",
+        "category": "heritage_sites",
+        "bufferMeters": 1000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.4281,
+          27.7161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "heritage_sites-8",
+        "name": "Lumbini (Birthplace of Buddha)",
+        "category": "heritage_sites",
+        "bufferMeters": 1000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.2758,
+          27.4794
+        ]
+      }
+    }
+  ]
+}

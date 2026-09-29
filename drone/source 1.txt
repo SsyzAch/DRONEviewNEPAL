@@ -1,0 +1,159 @@
+
+
+## Full report draft
+
+### 1. Legal framework
+
+Nepal’s drone law is not a single statute; it is a layered regime. The main operational instrument is CAAN’s *Unmanned Aircraft System Requirements (UASR)*, which applies to UAS operations in Nepal and establishes the baseline for registration, licensing, operating limits, and enforcement. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+The CAAN registration form shows that drone registration is an official prerequisite for lawful operation and that CAAN expects compliance with both its own rules and the Ministry of Home Affairs UAV/drone procedure. This means an operator should treat the legal stack as CAAN technical regulation plus security/police permissions where required. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/update/required-documents-for-uav-drone-online-registrationfor-nepalese-with-link.pdf)
+
+The Privacy Act 2075 also matters because drones routinely collect images and other personal data. In practice, aerial photography, surveillance, and any mission involving identifiable people should be treated as privacy-sensitive even if the flight is otherwise airspace-compliant. [hmis.gov](https://hmis.gov.np/media/22/03_The-Privacy-Act-2075-2018.pdf)
+
+### 2. Drone classification
+
+CAAN uses four mass-based classes:
+- Category A: under 250 g.
+- Category B: 250 g to 2 kg.
+- Category C: 2 kg to 25 kg.
+- Category D: above 25 kg. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+The key legal consequence is that the UASR’s open-category framework covers aircraft up to 25 kg, while Category D falls outside that open framework and therefore requires separate or more restrictive authorization. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+### 3. Registration requirements
+
+CAAN requires registration for drones operated in Nepal, subject to limited foreign-registration recognition. The application asks for applicant identity, drone make/model, serial number, weight, purpose, photo/manual/specification, and proof of lawful acquisition or import. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/update/required-documents-for-uav-drone-online-registrationfor-nepalese-with-link.pdf)
+
+The drone must be marked with its registration/UIN in a durable, visible, contrasting manner. Registration creates the legal identity of the aircraft, but it does not by itself authorize flight. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+The publicly posted CAAN instruction sheet indicates a registration fee of USD 50 plus 13% VAT, payable after approval on certificate collection. That is the most concrete current fee evidence available from the retrieved official material. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/update/required-documents-for-uav-drone-online-registrationfor-nepalese-with-link.pdf)
+
+### 4. Permit system
+
+The permit system is layered and purpose-sensitive. Even after registration, a pilot generally needs flight permission for the planned operation, and permissions become more restrictive near aerodromes, in controlled airspace, and in special or sensitive areas. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+The clearest evidence retrieved so far is that operations above 100 m AGL and outside 5 km of an aerodrome may require segregated airspace or NOTAM publication, and operations within 5 km of an aerodrome are tightly controlled. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+For security-sensitive uses, the MoHA procedure referenced by CAAN likely governs additional approvals for photography, filming, and flights near sensitive locations, but the exact categories and thresholds still need the original procedure text for final confirmation. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/Purpose%20of%20Operation%20and%20Commitment%20letter.pdf)
+
+### 5. Flight rules
+
+The default operating rules in Nepal are:
+- VLOS only.
+- Daylight only.
+- VMC only.
+- Maximum 100 m AGL.
+- Maximum 300 m horizontal distance from the remote pilot.
+- At least 30 m from uninvolved persons.
+- No flight in clouds.
+- No careless or reckless operation.
+- Give way to manned aircraft. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+The UASR also bars flight over people not directly involved, in or near prohibited or restricted areas, and over populated areas unless special permission exists. For airport-related operations, the 5 km rule is the most important practical constraint for app design. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+### 6. Restricted airspace
+
+The retrieved material confirms that aerodrome zones are restricted and that more complex operations may require NOTAMs or segregated airspace. That makes CAAN’s AIP and NOTAM system the key source for any flight-planning map layer. [e-aip.caanepal.gov](https://e-aip.caanepal.gov.np/welcome/listall/1)
+
+A publicly reported MoHA warning also indicates site-specific restrictions around border areas and several high-sensitivity landmarks and government/security compounds. These should be treated as likely real restrictions, but each site should be marked with confidence level until the primary procedure is verified. [thehimalayantimes](https://thehimalayantimes.com/kathmandu/moha-warns-against-unauthorised-drone-flight)
+
+### 7. Geospatial data
+
+For a flight-planning app, the most important legally grounded geospatial layers are:
+- Aerodrome polygons and 5 km buffers.
+- Controlled airspace and segregated airspace.
+- NOTAM-based temporary restriction zones.
+- Protected areas and national parks.
+- Border and sensitive-site buffers where officially published. [e-aip.caanepal.gov](https://e-aip.caanepal.gov.np/_uploads/_pdf/59ac60e114a6957ff68a8cee1e4ceb93.pdf)
+
+A practical implementation should use official authority layers whenever possible and keep all uncertain areas as “advisory” until legally confirmed. If a polygon is not published by an official source, the system should not present it as a definitive legal boundary. [e-aip.caanepal.gov](https://e-aip.caanepal.gov.np/welcome/listall/1)
+
+### 8. Import rules
+
+The registration paperwork shows that import evidence matters: CAAN asks for a customs clearance certificate or VAT bill depending on whether the drone was imported or bought locally. That strongly indicates import status affects registration, but the current retrieved material does not yet fully specify customs duty, tax exemptions, or temporary import rules. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/update/required-documents-for-uav-drone-online-registrationfor-nepalese-with-link.pdf)
+
+### 9. Foreign operators
+
+Foreign operators appear to be allowed only under controlled conditions, because CAAN recognizes foreign registration in some cases but still requires Nepal-based registration or permission analysis for local operations. Tourism, research, NGO, and media missions should therefore be treated as needing advance permitting and location-specific review. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+### 10. Enforcement
+
+CAAN can inspect, test, and require records; it can also suspend or cancel licences and take action when operations endanger safety. The accident-reporting rule within 48 hours is especially important for compliance workflows. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+The public MoHA warning reinforces that unauthorized operations can trigger legal action beyond the aviation regulator. For the app, this means the compliance checker should clearly state that aviation approval is not the same as security approval. [thehimalayantimes](https://thehimalayantimes.com/kathmandu/moha-warns-against-unauthorised-drone-flight)
+
+### 11. Agencies
+
+The agencies most clearly implicated by the currently retrieved sources are:
+- CAAN: technical aviation rules, registration, licensing, flight permissions. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/update/required-documents-for-uav-drone-online-registrationfor-nepalese-with-link.pdf)
+- Ministry of Home Affairs: security procedure and sensitive-site permissions. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/Purpose%20of%20Operation%20and%20Commitment%20letter.pdf)
+- Department of Immigration / Customs authorities: import and entry-related compliance, inferred from the registration document requirements. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/update/required-documents-for-uav-drone-online-registrationfor-nepalese-with-link.pdf)
+
+### 12. Timeline
+
+The current timeline is:
+- 2002: Civil Aviation Regulations provide the rulemaking basis cited by CAAN. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+- 2019: CAAN registration form and the referenced MoHA drone procedure appear in the current administrative framework. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/Purpose%20of%20Operation%20and%20Commitment%20letter.pdf)
+- 2021: CAAN UASR is issued and becomes the principal operational drone rule. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+- 2022: Public reporting shows MoHA enforcement warnings regarding unauthorized flights. [thehimalayantimes](https://thehimalayantimes.com/kathmandu/moha-warns-against-unauthorised-drone-flight)
+
+### 13. International comparison
+
+Compared with the US, EU, UK, India, Bhutan, and China, Nepal’s framework appears more centralized and permission-driven, with stronger emphasis on specific flight permission and security review. The structure is closer to a high-control aviation security model than to a mostly hobbyist open-category regime. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/Purpose%20of%20Operation%20and%20Commitment%20letter.pdf)
+
+### 14. FAQ answers
+
+Can tourists fly drones in Nepal?  
+Likely only with proper registration/permission and sensitivity checks; the current evidence shows drone use is not automatically free for visitors. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/update/required-documents-for-uav-drone-online-registrationfor-nepalese-with-link.pdf)
+
+Can drones fly in Kathmandu?  
+Yes, but Kathmandu is exactly where airport, security, and sensitive-site restrictions make preflight permission essential. [thehimalayantimes](https://thehimalayantimes.com/kathmandu/moha-warns-against-unauthorised-drone-flight)
+
+Can drones fly inside national parks?  
+This is likely heavily restricted and should be treated as permission-required until a park-specific official rule is verified. [thehimalayantimes](https://thehimalayantimes.com/kathmandu/moha-warns-against-unauthorised-drone-flight)
+
+Can drones photograph temples?  
+Potentially yes with permission, but privacy, security, and site-management rules may apply. [hmis.gov](https://hmis.gov.np/media/22/03_The-Privacy-Act-2075-2018.pdf)
+
+Can drones cross borders?  
+No practical default assumption should allow cross-border flight; border areas are highly sensitive and likely restricted. [thehimalayantimes](https://thehimalayantimes.com/kathmandu/moha-warns-against-unauthorised-drone-flight)
+
+Can drones be imported without permits?  
+The registration paperwork suggests lawful import evidence is required, so “import without any paperwork” should be treated as unsafe. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/update/required-documents-for-uav-drone-online-registrationfor-nepalese-with-link.pdf)
+
+Can drones fly commercially?  
+Yes, but commercial and aerial-work missions should be treated as permission-heavy and possibly operator-qualification dependent. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+
+## Practical app rules
+
+For an interactive flight-planning tool, the safest rule engine is:
+1. Require registration/UIN for all non-exempt drones. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/update/required-documents-for-uav-drone-online-registrationfor-nepalese-with-link.pdf)
+2. Block or warn inside 5 km of aerodromes unless a special permission record exists. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+3. Block flights above 100 m AGL unless the mission record includes the required higher-altitude authorization. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/UAS%20Requirement%20final.pdf)
+4. Block flights over people, crowds, and sensitive places unless an explicit override is stored. [thehimalayantimes](https://thehimalayantimes.com/kathmandu/moha-warns-against-unauthorised-drone-flight)
+5. Add a separate privacy alert for any imagery mission. [hmis.gov](https://hmis.gov.np/media/22/03_The-Privacy-Act-2075-2018.pdf)
+
+## Confidence map
+
+High confidence:
+- UASR exists and is the key technical regulation.
+- Four drone weight classes.
+- 100 m AGL, 5 km aerodrome, VLOS, daytime, VMC, 30 m separation.
+- Registration/UIN requirement.
+- Accident reporting and CAAN enforcement powers. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/update/required-documents-for-uav-drone-online-registrationfor-nepalese-with-link.pdf)
+
+Medium confidence:
+- Fee amount and payment channel.
+- MoHA site-specific restriction details.
+- Foreign-operator pathways.
+- Customs and temporary import details. [caanepal.gov](https://caanepal.gov.np/storage/app/media/drone/sep%2024%202022/Purpose%20of%20Operation%20and%20Commitment%20letter.pdf)
+
+Low confidence:
+- Exact polygons for sensitive sites and all local restrictions.
+- Comprehensive import tax treatment.
+- Complete nationwide permit matrix across every use case without the original MoHA text and customs circulars. [thehimalayantimes](https://thehimalayantimes.com/kathmandu/moha-warns-against-unauthorised-drone-flight)
+
+## Final note
+
+This is already enough to build a first-pass legal rules engine, but not enough yet to call the knowledge base fully exhaustive. The remaining work is to lock down the missing primary documents, especially MoHA’s procedure, customs rules, and official geospatial restriction layers. [e-aip.caanepal.gov](https://e-aip.caanepal.gov.np/welcome/listall/1)
+

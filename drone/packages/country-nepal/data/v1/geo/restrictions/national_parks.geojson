@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [86.9290, 27.8369]
+      },
+      "properties": {
+        "id": "feat-nep-sagarmatha-np-001",
+        "name": "Sagarmatha National Park (Everest Region)",
+        "category": "national_parks",
+        "authorityId": "auth-nep-dnpwc-001",
+        "sourceDocument": "Nepal Gazette Protected Areas",
+        "effectiveDate": "1976-07-19",
+        "expires": null,
+        "restrictionType": "Restricted",
+        "bufferMeters": 19000,
+        "priority": 85,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 98,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [83.97, 28.62]
+      },
+      "properties": {
+        "id": "feat-nep-annapurna-ca-001",
+        "name": "Annapurna Conservation Area (ACAP)",
+        "category": "national_parks",
+        "authorityId": "auth-nep-dnpwc-001",
+        "sourceDocument": "Nepal Gazette Protected Areas",
+        "effectiveDate": "1992-01-01",
+        "expires": null,
+        "restrictionType": "Restricted",
+        "bufferMeters": 35000,
+        "priority": 85,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 95,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [84.3542, 27.5333]
+      },
+      "properties": {
+        "id": "feat-nep-chitwan-np-001",
+        "name": "Chitwan National Park",
+        "category": "national_parks",
+        "authorityId": "auth-nep-dnpwc-001",
+        "sourceDocument": "Nepal Gazette Protected Areas",
+        "effectiveDate": "1973-09-20",
+        "expires": null,
+        "restrictionType": "Restricted",
+        "bufferMeters": 20000,
+        "priority": 85,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 97,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    }
+  ]
+}

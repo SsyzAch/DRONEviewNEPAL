@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliance System</title>
+  
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  
+  <!-- Modern Utility Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+
+  <header class="topbar border-b border-gray-200 bg-white px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <div class="logo-box bg-indigo-600 text-white rounded-md flex items-center justify-center font-bold text-sm">CC</div>
+      <h1 class="text-sm font-semibold tracking-tight">Compliance Compass</h1>
+      <span class="badge text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded border border-gray-200">v1.0.0</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+      System Online
+    </div>
+  </header>
+
+  <div class="layout">
+    
+    <aside class="sidebar border-r border-gray-200 bg-white p-6 flex-col gap-6 overflow-y-auto">
+      
+      <section>
+        <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Flight Parameters</h2>
+        <form id="control-form" class="flex-col gap-4">
+          
+          <div class="form-group">
+            <label for="drone-select" class="block text-sm font-medium text-gray-700 mb-1">Drone Model</label>
+            <select id="drone-select" class="input-field w-full">
+              <!-- Dynamically populated -->
+            </select>
+            <div id="drone-specs" class="text-xs text-gray-500 mt-1">Weight: --g | Category: --</div>
+          </div>
+          
+          <div class="form-group">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Pilot Nationality</label>
+            <div class="toggle-group flex bg-gray-100 p-1 rounded-md border border-gray-200">
+              <label class="toggle-option flex-1 text-center">
+                <input type="radio" name="pilot-nationality" value="Nepali" checked class="sr-only">
+                <span class="block py-1.5 px-3 text-sm font-medium rounded text-gray-500 transition-colors cursor-pointer">Nepali</span>
+              </label>
+              <label class="toggle-option flex-1 text-center">
+                <input type="radio" name="pilot-nationality" value="Foreign" class="sr-only">
+                <span class="block py-1.5 px-3 text-sm font-medium rounded text-gray-500 transition-colors cursor-pointer">Foreigner</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pilot-purpose" class="block text-sm font-medium text-gray-700 mb-1">Operation Purpose</label>
+            <select id="pilot-purpose" class="input-field w-full">
+              <option value="Recreational">Recreational</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Research">Research / Scientific</option>
+              <option value="Emergency">Emergency Response</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <div class="flex justify-between items-center mb-1">
+              <label for="altitude-input" class="block text-sm font-medium text-gray-700">Altitude (AGL)</label>
+              <span id="altitude-val" class="text-sm font-semibold text-indigo-600">120m</span>
+            </div>
+            <input type="range" id="altitude-input" min="0" max="300" step="5" value="120" class="range-slider w-full">
+          </div>
+
+          <div class="form-group border-t border-gray-200 pt-4 mt-2">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Location Coordinates</label>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <span class="block text-xs text-gray-500 mb-1">Latitude</span>
+                <input type="number" id="lat-input" step="any" value="27.6966" class="input-field w-full font-mono text-sm">
+              </div>
+              <div>
+                <span class="block text-xs text-gray-500 mb-1">Longitude</span>
+                <input type="number" id="lng-input" step="any" value="85.3591" class="input-field w-full font-mono text-sm">
+              </div>
+            </div>
+            <p class="text-xs text-gray-400 mt-2">Drag map marker to update automatically.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="preset-select" class="block text-sm font-medium text-gray-700 mb-1">Quick Navigate</label>
+            <select id="preset-select" class="input-field w-full">
+              <option value="tia">Tribhuvan Intl Airport</option>
+              <option value="pokhara">Pokhara Intl Airport</option>
+              <option value="lukla">Lukla Tenzing-Hillary</option>
+              <option value="durbar">Kathmandu Durbar Square</option>
+              <option value="everest">Sagarmatha Park</option>
+              <option value="army">Nepal Army HQ</option>
+              <option value="rural">Open Safe Area</option>
+            </select>
+          </div>
+
+          <button type="submit" id="validate-btn" class="btn-primary w-full mt-2">Run Validation</button>
+        </form>
+      </section>
+
+      <section class="mt-8 border-t border-gray-200 pt-6">
+        <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">System Limitations</h2>
+        <div id="limitations-container" class="flex-col gap-2">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+    </aside>
+
+    <main class="content bg-gray-50 p-6 flex-col gap-6 overflow-y-auto">
+      
+      <section class="card bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden flex flex-col">
+        <div class="border-b border-gray-200 px-4 py-3 bg-gray-50 flex justify-between items-center">
+          <h2 class="text-sm font-semibold text-gray-700">Geospatial Viewer</h2>
+        </div>
+        <div id="map" class="w-full" style="height: 400px;"></div>
+      </section>
+
+      <section class="grid grid-cols-2 gap-6">
+        
+        <article class="card bg-white rounded-lg border border-gray-200 shadow-sm p-5 flex flex-col" id="status-container">
+          <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Compliance Status</h2>
+          <div class="flex-1 flex flex-col items-center justify-center text-center">
+            <div id="status-badge" class="px-4 py-1 rounded-full text-sm font-bold tracking-wide mb-3 border">ALLOWED</div>
+            <p id="status-description" class="text-sm text-gray-600 leading-relaxed">No restrictions found. Standard flight profile is active.</p>
+          </div>
+        </article>
+
+        <article class="card bg-white rounded-lg border border-gray-200 shadow-sm p-5">
+          <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Risk Vectors</h2>
+          <div class="flex items-center gap-6">
+            <div class="relative flex items-center justify-center w-20 h-20 rounded-full border-4 border-indigo-100">
+              <span id="risk-score" class="text-2xl font-bold text-gray-900">0</span>
+            </div>
+            <div class="flex-1 flex-col gap-2">
+              <div class="flex justify-between items-center text-xs text-gray-600">
+                <span class="w-24">Legal</span>
+                <div class="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                  <div id="bar-legal" class="h-full bg-indigo-500 rounded-full transition-all duration-300"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center text-xs text-gray-600">
+                <span class="w-24">Safety</span>
+                <div class="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                  <div id="bar-safety" class="h-full bg-indigo-500 rounded-full transition-all duration-300"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center text-xs text-gray-600">
+                <span class="w-24">Privacy</span>
+                <div class="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                  <div id="bar-privacy" class="h-full bg-indigo-500 rounded-full transition-all duration-300"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center text-xs text-gray-600">
+                <span class="w-24">Operational</span>
+                <div class="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                  <div id="bar-operational" class="h-full bg-indigo-500 rounded-full transition-all duration-300"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center text-xs text-gray-600">
+                <span class="w-24">Environmental</span>
+                <div class="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                  <div id="bar-environmental" class="h-full bg-indigo-500 rounded-full transition-all duration-300"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card bg-white rounded-lg border border-gray-200 shadow-sm p-5">
+          <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Required Documentation</h2>
+          <div id="permit-checklist" class="flex-col gap-2">
+            <p class="text-sm text-gray-500 italic">No special permits required.</p>
+          </div>
+        </article>
+
+        <article class="card bg-white rounded-lg border border-gray-200 shadow-sm p-5">
+          <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Evaluation Trace</h2>
+          <div id="decision-tree" class="flex-col gap-2 max-h-48 overflow-y-auto pr-2">
+            <!-- Dynamically populated -->
+          </div>
+        </article>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- Citation Modal -->
+  <div id="citation-modal" class="modal-overlay hidden fixed inset-0 bg-gray-900 bg-opacity-50 z-50 flex items-center justify-center backdrop-blur-sm transition-opacity">
+    <div class="bg-white rounded-lg shadow-xl border border-gray-200 w-full max-w-lg overflow-hidden">
+      <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+        <h3 class="text-sm font-semibold text-gray-800">Source Document</h3>
+        <button id="close-modal" class="text-gray-400 hover:text-gray-600 focus:outline-none transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <div class="p-5">
+        <h4 id="citation-title" class="text-base font-semibold text-indigo-700 mb-4">UAS Requirements 2021</h4>
+        
+        <div class="bg-gray-50 border border-gray-100 rounded p-3 mb-4 text-sm grid grid-cols-2 gap-2">
+          <div class="text-gray-500">Section/Page:</div>
+          <div id="citation-section" class="font-medium text-gray-900 text-right">101.7</div>
+          <div class="text-gray-500">Authority:</div>
+          <div id="citation-authority" class="font-medium text-gray-900 text-right">CAAN</div>
+          <div class="text-gray-500">Extraction Quality:</div>
+          <div id="citation-ocr" class="font-medium text-gray-900 text-right">100%</div>
+        </div>
+        
+        <blockquote class="border-l-4 border-indigo-500 pl-4 py-1 italic text-gray-700 text-sm leading-relaxed" id="citation-quote">
+          "No person shall operate an unmanned aircraft above 100m AGL..."
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="engine.bundle.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

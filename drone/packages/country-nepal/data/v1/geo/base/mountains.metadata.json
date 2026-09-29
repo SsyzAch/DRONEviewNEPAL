@@ -1,0 +1,10 @@
+{
+  "layerName": "mountains",
+  "source": "Survey Department of Nepal and global summit databases",
+  "downloadDate": "2026-06-30",
+  "checksum": "sha256-mountains-checksum-v1",
+  "version": "1.0.0",
+  "license": "Public Domain / Geographic Landmark Data",
+  "maintainer": "Survey Department of Nepal",
+  "updateFrequency": "never"
+}

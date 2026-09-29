@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DSLRule",
+  "type": "object",
+  "required": ["id", "name", "priority", "conditions", "result", "citationIds", "metadata"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "priority": { "type": "integer" },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["field", "operator", "value"],
+        "properties": {
+          "field": { "type": "string" },
+          "operator": { "type": "string", "enum": ["==", "!=", "<", "<=", ">", ">=", "in", "not_in"] },
+          "value": {}
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "required": ["status", "reason"],
+      "properties": {
+        "status": { "type": "string", "enum": ["Allowed", "Warning", "Restricted", "Prohibited"] },
+        "reason": { "type": "string" },
+        "riskSurcharge": {
+          "type": "object",
+          "properties": {
+            "legal": { "type": "integer" },
+            "safety": { "type": "integer" },
+            "privacy": { "type": "integer" },
+            "operational": { "type": "integer" },
+            "environmental": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "citationIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["reviewStatus", "effectiveDate", "expiryDate", "revision"],
+      "properties": {
+        "reviewStatus": { "type": "string", "enum": ["Extracted", "Parsed", "Reviewed", "Verified", "Published", "Deprecated"] },
+        "effectiveDate": { "type": "string" },
+        "expiryDate": { "type": ["string", "null"] },
+        "revision": { "type": "integer" },
+        "supersedesId": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

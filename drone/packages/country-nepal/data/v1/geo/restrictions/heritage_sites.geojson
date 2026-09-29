@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [85.3220, 27.7047]
+      },
+      "properties": {
+        "id": "feat-nep-kathmandu-durbar-001",
+        "name": "Kathmandu Durbar Square UNESCO Site",
+        "category": "heritage_sites",
+        "authorityId": "auth-nep-doa-001",
+        "sourceDocument": "UNESCO World Heritage List 121",
+        "effectiveDate": "1979-01-01",
+        "expires": null,
+        "restrictionType": "Restricted",
+        "bufferMeters": 1000,
+        "priority": 80,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 98,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [85.3440, 27.7102]
+      },
+      "properties": {
+        "id": "feat-nep-pashupatinath-001",
+        "name": "Pashupatinath Temple Area",
+        "category": "heritage_sites",
+        "authorityId": "auth-nep-doa-001",
+        "sourceDocument": "UNESCO World Heritage List 121",
+        "effectiveDate": "1979-01-01",
+        "expires": null,
+        "restrictionType": "Restricted",
+        "bufferMeters": 1000,
+        "priority": 80,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 99,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [83.5070, 27.6792]
+      },
+      "properties": {
+        "id": "feat-nep-lumbini-001",
+        "name": "Lumbini Sacred Garden UNESCO Site",
+        "category": "heritage_sites",
+        "authorityId": "auth-nep-doa-001",
+        "sourceDocument": "UNESCO World Heritage List 666",
+        "effectiveDate": "1997-01-01",
+        "expires": null,
+        "restrictionType": "Restricted",
+        "bufferMeters": 1000,
+        "priority": 80,
+        "dataQuality": {
+          "verified": true,
+          "confidence": 97,
+          "lastChecked": "2026-06-30",
+          "needsManualReview": false
+        }
+      }
+    }
+  ]
+}

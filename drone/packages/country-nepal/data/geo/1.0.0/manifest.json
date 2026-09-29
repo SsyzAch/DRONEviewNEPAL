@@ -1,0 +1,14 @@
+{
+  "dataset": "geo",
+  "version": "1.0.0",
+  "recordCount": 5,
+  "coordinateSystem": "EPSG:4326",
+  "generatedFrom": [
+    "doc-nep-caan-aip",
+    "doc-nep-national-parks-act-2029",
+    "doc-nep-ancient-monuments-act-2013",
+    "Survey Department of Nepal charts"
+  ],
+  "lastVerified": "2026-06-30",
+  "checksum": "sha256-geo-manifest-v1"
+}

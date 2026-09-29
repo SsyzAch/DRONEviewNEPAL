@@ -1,0 +1,16 @@
+[
+  {
+    "documentId": "doc-nep-caan-uasr-2021",
+    "page": 11,
+    "paragraph": 1,
+    "text": "Maximum operating height: No person shall operate an unmanned aircraft above 100 m above ground level.",
+    "ocrConfidence": 100.0
+  },
+  {
+    "documentId": "doc-nep-caan-uasr-2021",
+    "page": 12,
+    "paragraph": 2,
+    "text": "No person shall operate an unmanned aircraft within 5 km of the movement area of an aerodrome.",
+    "ocrConfidence": 100.0
+  }
+]

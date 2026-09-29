@@ -1,0 +1,10 @@
+{
+  "layerName": "military",
+  "source": "Nepal Government public VVIP and security installation announcements",
+  "downloadDate": "2026-06-30",
+  "checksum": "sha256-military-checksum-v1",
+  "version": "1.0.0",
+  "license": "Closed / Restricted data. Coordinates are advisory only.",
+  "maintainer": "Ministry of Home Affairs / Nepal Army",
+  "updateFrequency": "irregular"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Authority",
+  "type": "object",
+  "required": ["id", "name", "level", "role", "website"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "level": { "type": "string", "enum": ["Federal", "Provincial", "Local", "Customs"] },
+    "role": { "type": "string" },
+    "website": { "type": "string" }
+  }
+}

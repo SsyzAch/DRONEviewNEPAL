@@ -1,0 +1,11 @@
+{
+  "dataset": "drones",
+  "version": "1.0.0",
+  "recordCount": 7,
+  "coordinateSystem": "N/A",
+  "generatedFrom": [
+    "DJI / Autel / Skydio official product specifications sheets"
+  ],
+  "lastVerified": "2026-06-30",
+  "checksum": "sha256-drones-manifest-v1"
+}

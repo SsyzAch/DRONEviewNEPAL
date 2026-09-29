@@ -44,6 +44,7 @@ export class ApiLayer {
       rules,
       authorities,
       drones,
+      permitNodes,
       geoLayers,
       citations
     );

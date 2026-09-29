@@ -3,6 +3,13 @@ export interface Coordinate {
   longitude: number;
 }
 
+export type ValidationStatus =
+  | "Allowed"
+  | "Warning"
+  | "Permit Required"
+  | "Restricted"
+  | "Prohibited";
+
 export type Operator = "==" | "!=" | "<" | "<=" | ">" | ">=" | "in" | "not_in";
 
 export interface DSLCondition {
@@ -17,7 +24,7 @@ export interface DSLRule {
   priority: number; // For evaluation precedence
   conditions: DSLCondition[];
   result: {
-    status: "Allowed" | "Warning" | "Restricted" | "Prohibited";
+    status: ValidationStatus;
     reason: string;
     riskSurcharge: {
       legal?: number;
@@ -35,6 +42,7 @@ export interface DSLRule {
     recurring?: "daily" | "weekly" | "monthly" | "yearly" | null;
   };
   metadata: {
+    reviewStatus?: "Extracted" | "Parsed" | "Reviewed" | "Verified" | "Published" | "Deprecated";
     effectiveDate: string;
     expiryDate: string | null;
     revision: number;
@@ -152,6 +160,7 @@ export interface ValidationInput {
   drone: {
     manufacturer: string;
     model: string;
+    weightGrams?: number;
     takeoffWeightGrams?: number;
   };
   pilot: {
@@ -173,7 +182,7 @@ export interface MatchedFeatureResult {
 export interface MatchedRuleResult {
   id: string;
   ruleName: string;
-  severity: "Allowed" | "Warning" | "Restricted" | "Prohibited";
+  severity: ValidationStatus;
   reason: string;
   citationIds: string[];
 }
@@ -200,17 +209,22 @@ export interface ValidationContext {
   timestamp: string; // UTC ISO-8601
   input: ValidationInput;
   results: {
-    status: "Allowed" | "Warning" | "Restricted" | "Prohibited";
+    status: ValidationStatus;
     highestPriorityRule: string | null;
     matchedFeatures: MatchedFeatureResult[];
     matchedRules: MatchedRuleResult[];
     requiredPermits: string[];
     citations: Array<{
       id: string;
+      documentId: string;
       authorityName: string;
       legalBasis: string;
       officialCircular: string;
-      lastVerified: string;
+      section: string;
+      page: number;
+      quoteStart: string;
+      quoteEnd: string;
+      ocrConfidence: number;
     }>;
     explanations: string[];
     structuredExplanations: ExplanationStageNode[];

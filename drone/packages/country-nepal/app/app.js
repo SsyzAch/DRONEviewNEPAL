@@ -348,6 +348,9 @@ function renderResults(context) {
   } else if (res.status === 'Restricted') {
     statusBadge.classList.add('status-restricted');
     statusDesc.textContent = "Flight is restricted inside borders. Permit checks required before takeoff.";
+  } else if (res.status === 'Permit Required') {
+    statusBadge.classList.add('status-permit-required');
+    statusDesc.textContent = "Flight may proceed only after obtaining required agency permits.";
   } else if (res.status === 'Prohibited') {
     statusBadge.classList.add('status-prohibited');
     statusDesc.textContent = "Flight blocked! Operation within secure aerodromes or VVIP zones is prohibited.";
@@ -403,32 +406,20 @@ function renderResults(context) {
     const chip = `<span class="step-stage stage-${step.stage}">${step.stage}</span>`;
     const desc = `<span class="step-desc">${step.description}</span>`;
     
-    // Look up if this step is linkable to a citation
-    let hasCitation = false;
-    let citationId = '';
-    
+    // Map explanation stage to authoritative citation ids only.
+    let citationIds = [];
     if (step.stage === 'RuleMatch' && step.targetId) {
-      // Find rule from context rules and extract its citationId references
-      const rule = context.input.pilot.nationality === 'Foreign' || context.input.pilot.purpose === 'Commercial'
-        ? res.matchedRules.find(r => r.id === step.targetId)
-        : null; // Or check rule databases
-      
-      const cit = citationsDatabase.find(c => c.id.startsWith('cit-nep-caan') || c.id.includes(step.targetId.split('-')[2]));
-      if (cit) {
-        hasCitation = true;
-        citationId = cit.id;
-      }
-    } else if (step.stage === 'SpatialMatch' && step.targetId) {
-      const cit = citationsDatabase.find(c => c.id.includes(step.targetId.split('-')[2]) || c.id.includes('caan-uasr'));
-      if (cit) {
-        hasCitation = true;
-        citationId = cit.id;
+      const matchedRule = res.matchedRules.find(r => r.id === step.targetId);
+      citationIds = matchedRule ? matchedRule.citationIds.filter(id => citationsDatabase.some(c => c.id === id)) : [];
+    } else if (step.stage === 'Citation' && step.targetId) {
+      if (citationsDatabase.some(c => c.id === step.targetId)) {
+        citationIds = [step.targetId];
       }
     }
 
-    const link = hasCitation 
-      ? `<span class="step-link" onclick="showCitationModal('${citationId}')">View Law</span>`
-      : '';
+    const link = citationIds
+      .map(id => `<span class="step-link" onclick="showCitationModal('${id}')">View Law</span>`)
+      .join(' ');
 
     stepEl.innerHTML = `${chip} ${desc} ${link}`;
     treeContainer.appendChild(stepEl);

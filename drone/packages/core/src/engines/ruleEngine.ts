@@ -1,4 +1,4 @@
-import { DSLRule, DSLCondition, ValidationContext, MatchedRuleResult } from "../types";
+import { DSLRule, DSLCondition, ValidationContext, MatchedRuleResult, ValidationStatus } from "../types";
 import { isRestrictionActive } from "../utils/temporalUtils";
 
 /**
@@ -127,7 +127,7 @@ export class RuleEngine {
 
     // Resolve final status using deterministic severity precedence:
     // Prohibited > Restricted > Permit Required > Warning > Allowed
-    const statusPrecedence = {
+    const statusPrecedence: Record<ValidationStatus, number> = {
       Prohibited: 4,
       Restricted: 3,
       "Permit Required": 2,
@@ -135,7 +135,7 @@ export class RuleEngine {
       Allowed: 0,
     };
 
-    let highestSeverity: "Allowed" | "Warning" | "Restricted" | "Prohibited" = "Allowed";
+    let highestSeverity: ValidationStatus = "Allowed";
     let highestPriorityRuleId: string | null = null;
     let highestPriorityValue = -1;
 

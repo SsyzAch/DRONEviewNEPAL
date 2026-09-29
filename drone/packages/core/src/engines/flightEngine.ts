@@ -67,8 +67,16 @@ export class FlightEngine {
         d.model.toLowerCase() === input.drone.model.toLowerCase()
     );
 
-    const mergedTakeoffWeight =
-      input.drone.takeoffWeightGrams || (droneSpec ? droneSpec.takeoffWeightGrams : 500);
+    const resolvedTakeoffWeight =
+      input.drone.takeoffWeightGrams ||
+      input.drone.weightGrams ||
+      (droneSpec ? droneSpec.takeoffWeightGrams : 500);
+    const resolvedWeightGrams = Math.max(
+      input.drone.weightGrams || 0,
+      input.drone.takeoffWeightGrams || 0,
+      droneSpec ? droneSpec.weightGrams : 0,
+      resolvedTakeoffWeight
+    );
 
     const context: ValidationContext = {
       id: evaluationId,
@@ -78,7 +86,8 @@ export class FlightEngine {
         drone: {
           manufacturer: input.drone.manufacturer,
           model: input.drone.model,
-          takeoffWeightGrams: mergedTakeoffWeight,
+          weightGrams: resolvedWeightGrams,
+          takeoffWeightGrams: resolvedTakeoffWeight,
         },
         pilot: input.pilot,
       },

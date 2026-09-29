@@ -23,7 +23,7 @@
       "type": "object",
       "required": ["status", "reason"],
       "properties": {
-        "status": { "type": "string", "enum": ["Allowed", "Warning", "Restricted", "Prohibited"] },
+        "status": { "type": "string", "enum": ["Allowed", "Warning", "Permit Required", "Restricted", "Prohibited"] },
         "reason": { "type": "string" },
         "riskSurcharge": {
           "type": "object",

@@ -54,9 +54,9 @@ export class GisEngine {
           name: props.name,
           layer: props.category,
           distanceMeters: Math.round(distance * 100) / 100,
-          confidence: props.dataQuality.confidence,
-          restrictionType: props.restrictionType,
-          priority: props.priority,
+          confidence: props.dataQuality?.confidence ?? 100,
+          restrictionType: props.restrictionType || "Advisory",
+          priority: props.priority ?? 0,
         });
       }
     }

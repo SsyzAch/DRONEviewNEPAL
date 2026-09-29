@@ -2,6 +2,7 @@ import {
   DSLRule,
   Authority,
   DroneModel,
+  PermitNode,
   SpatialFeatureCollection,
   RegulatoryCitation,
 } from "../types";
@@ -23,6 +24,7 @@ export class IntegrityValidator {
     rules: DSLRule[],
     authorities: Authority[],
     drones: DroneModel[],
+    permitNodes: PermitNode[],
     geoLayers: { [layerName: string]: SpatialFeatureCollection },
     citations: RegulatoryCitation[]
   ): IntegrityReport {
@@ -36,6 +38,17 @@ export class IntegrityValidator {
     const citationIds = new Set(citations.map((c) => c.id));
     const ruleIds = new Set<string>();
     const droneIds = new Set<string>();
+    const allowedConditionFields = new Set([
+      "distanceToAirport",
+      "insideNationalPark",
+      "insideHeritageSite",
+      "insideMilitaryZone",
+      "altitudeAgl",
+      "pilot.nationality",
+      "pilot.purpose",
+      "drone.weightGrams",
+      "drone.takeoffWeightGrams",
+    ]);
 
     // 1. Validate Drones
     for (const drone of drones) {
@@ -49,6 +62,16 @@ export class IntegrityValidator {
 
       if (drone.weightGrams <= 0) {
         report.errors.push(`Drone ${drone.id} has invalid weight: ${drone.weightGrams}g`);
+      }
+      if (drone.takeoffWeightGrams <= 0) {
+        report.errors.push(
+          `Drone ${drone.id} has invalid takeoff weight: ${drone.takeoffWeightGrams}g`
+        );
+      }
+      if (drone.takeoffWeightGrams < drone.weightGrams) {
+        report.errors.push(
+          `Drone ${drone.id} has takeoff weight lower than dry weight (${drone.takeoffWeightGrams} < ${drone.weightGrams})`
+        );
       }
     }
 
@@ -101,12 +124,46 @@ export class IntegrityValidator {
         for (const cond of rule.conditions) {
           if (!cond.field || !cond.operator) {
             report.errors.push(`Rule ${rule.id} contains malformed condition`);
+          } else if (!allowedConditionFields.has(cond.field)) {
+            report.errors.push(`Rule ${rule.id} uses unsupported condition field: ${cond.field}`);
           }
         }
       }
+
+      if (
+        rule.metadata &&
+        rule.metadata.effectiveDate &&
+        rule.metadata.expiryDate &&
+        new Date(rule.metadata.effectiveDate).getTime() > new Date(rule.metadata.expiryDate).getTime()
+      ) {
+        report.errors.push(`Rule ${rule.id} has expiryDate earlier than effectiveDate`);
+      }
+
+      if (!rule.metadata || rule.metadata.reviewStatus !== "Published") {
+        report.warnings.push(`Rule ${rule.id} is not marked Published in metadata.reviewStatus`);
+      }
     }
 
-    // 4. Validate GeoJSON Layers
+    // 4. Validate permit decision graph links
+    const permitNodeIds = new Set(permitNodes.map((n) => n.id));
+    for (const node of permitNodes) {
+      if (!node.id) {
+        report.errors.push("Permit graph contains node with missing ID");
+        continue;
+      }
+      if (node.nextTrueNodeId && !permitNodeIds.has(node.nextTrueNodeId)) {
+        report.errors.push(
+          `Permit node ${node.id} references missing nextTrueNodeId: ${node.nextTrueNodeId}`
+        );
+      }
+      if (node.nextFalseNodeId && !permitNodeIds.has(node.nextFalseNodeId)) {
+        report.errors.push(
+          `Permit node ${node.id} references missing nextFalseNodeId: ${node.nextFalseNodeId}`
+        );
+      }
+    }
+
+    // 5. Validate GeoJSON Layers
     for (const [layerName, layer] of Object.entries(geoLayers)) {
       if (!layer || layer.type !== "FeatureCollection" || !Array.isArray(layer.features)) {
         report.errors.push(`GeoJSON layer "${layerName}" is not a valid FeatureCollection`);
@@ -137,11 +194,35 @@ export class IntegrityValidator {
               `Feature ${props.id} in layer "${layerName}" references non-existent authority: ${props.authorityId}`
             );
           }
+
+          if (props.bufferMeters < 0) {
+            report.errors.push(`Feature ${props.id} in layer "${layerName}" has negative bufferMeters`);
+          }
+          if (props.category && props.category !== layerName) {
+            report.warnings.push(
+              `Feature ${props.id} category "${props.category}" differs from loaded layer "${layerName}"`
+            );
+          }
+        }
+      }
+
+      // 5b. Validate citations are unique and authority references are valid
+      for (const citation of citations) {
+        if (!citation.id) {
+          report.errors.push("Citation has missing ID");
+        }
+        if (!authorityIds.has(citation.authorityId)) {
+          report.errors.push(
+            `Citation ${citation.id} references non-existent authority: ${citation.authorityId}`
+          );
+        }
+        if (!citation.legalBasis || !citation.officialCircular) {
+          report.errors.push(`Citation ${citation.id} is missing legalBasis or officialCircular`);
         }
       }
     }
 
-    // 5. Detect Orphan Authorities (unused)
+    // 6. Detect Orphan Authorities (unused)
     for (const authId of authorityIds) {
       if (!referencedAuthorityIds.has(authId)) {
         report.warnings.push(

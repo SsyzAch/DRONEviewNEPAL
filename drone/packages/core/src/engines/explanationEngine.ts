@@ -23,6 +23,10 @@ export class ExplanationEngine {
       explanations.push(
         "No major regulatory restrictions detected. The flight matches standard 'Open Category' parameters."
       );
+    } else if (status === "Permit Required") {
+      explanations.push(
+        "Flight can proceed only after required agency permits are approved."
+      );
     }
 
     // 2. Stage: SpatialMatch
@@ -63,10 +67,12 @@ export class ExplanationEngine {
     }
 
     for (const rule of context.results.matchedRules) {
+      const citationSummary =
+        rule.citationIds.length > 0 ? ` (citations: ${rule.citationIds.join(", ")})` : "";
       structuredExplanations.push({
         stage: "RuleMatch",
         targetId: rule.id,
-        description: `Matched rule "${rule.ruleName}" with severity ${rule.severity}: ${rule.reason}`
+        description: `Matched rule "${rule.ruleName}" with severity ${rule.severity}: ${rule.reason}${citationSummary}`
       });
     }
 
